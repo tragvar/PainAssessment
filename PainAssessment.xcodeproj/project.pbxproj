@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		840A5008169D6F70000EDCFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840A5007169D6F70000EDCFA /* UIKit.framework */; };
+		840A500A169D6F70000EDCFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840A5009169D6F70000EDCFA /* Foundation.framework */; };
+		840A500C169D6F70000EDCFA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840A500B169D6F70000EDCFA /* CoreGraphics.framework */; };
+		840A5012169D6F70000EDCFA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 840A5010169D6F70000EDCFA /* InfoPlist.strings */; };
+		840A5014169D6F70000EDCFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A5013169D6F70000EDCFA /* main.m */; };
+		840A5018169D6F70000EDCFA /* PAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A5017169D6F70000EDCFA /* PAAppDelegate.m */; };
+		840A501A169D6F70000EDCFA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 840A5019169D6F70000EDCFA /* Default.png */; };
+		840A501C169D6F70000EDCFA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840A501B169D6F70000EDCFA /* Default@2x.png */; };
+		840A501E169D6F70000EDCFA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840A501D169D6F70000EDCFA /* Default-568h@2x.png */; };
+		840A5021169D6F70000EDCFA /* PAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A5020169D6F70000EDCFA /* PAViewController.m */; };
+		840A5024169D6F70000EDCFA /* PAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840A5022169D6F70000EDCFA /* PAViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		840A5003169D6F70000EDCFA /* PainAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PainAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		840A5007169D6F70000EDCFA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		840A5009169D6F70000EDCFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		840A500B169D6F70000EDCFA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		840A500F169D6F70000EDCFA /* PainAssessment-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PainAssessment-Info.plist"; sourceTree = "<group>"; };
+		840A5011169D6F70000EDCFA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		840A5013169D6F70000EDCFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		840A5015169D6F70000EDCFA /* PainAssessment-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PainAssessment-Prefix.pch"; sourceTree = "<group>"; };
+		840A5016169D6F70000EDCFA /* PAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAAppDelegate.h; sourceTree = "<group>"; };
+		840A5017169D6F70000EDCFA /* PAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAAppDelegate.m; sourceTree = "<group>"; };
+		840A5019169D6F70000EDCFA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		840A501B169D6F70000EDCFA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		840A501D169D6F70000EDCFA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		840A501F169D6F70000EDCFA /* PAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAViewController.h; sourceTree = "<group>"; };
+		840A5020169D6F70000EDCFA /* PAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAViewController.m; sourceTree = "<group>"; };
+		840A5023169D6F70000EDCFA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PAViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		840A5000169D6F70000EDCFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840A5008169D6F70000EDCFA /* UIKit.framework in Frameworks */,
+				840A500A169D6F70000EDCFA /* Foundation.framework in Frameworks */,
+				840A500C169D6F70000EDCFA /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		840A4FF8169D6F70000EDCFA = {
+			isa = PBXGroup;
+			children = (
+				840A500D169D6F70000EDCFA /* PainAssessment */,
+				840A5006169D6F70000EDCFA /* Frameworks */,
+				840A5004169D6F70000EDCFA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		840A5004169D6F70000EDCFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				840A5003169D6F70000EDCFA /* PainAssessment.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		840A5006169D6F70000EDCFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				840A5007169D6F70000EDCFA /* UIKit.framework */,
+				840A5009169D6F70000EDCFA /* Foundation.framework */,
+				840A500B169D6F70000EDCFA /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		840A500D169D6F70000EDCFA /* PainAssessment */ = {
+			isa = PBXGroup;
+			children = (
+				840A5016169D6F70000EDCFA /* PAAppDelegate.h */,
+				840A5017169D6F70000EDCFA /* PAAppDelegate.m */,
+				840A501F169D6F70000EDCFA /* PAViewController.h */,
+				840A5020169D6F70000EDCFA /* PAViewController.m */,
+				840A5022169D6F70000EDCFA /* PAViewController.xib */,
+				840A500E169D6F70000EDCFA /* Supporting Files */,
+			);
+			path = PainAssessment;
+			sourceTree = "<group>";
+		};
+		840A500E169D6F70000EDCFA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				840A500F169D6F70000EDCFA /* PainAssessment-Info.plist */,
+				840A5010169D6F70000EDCFA /* InfoPlist.strings */,
+				840A5013169D6F70000EDCFA /* main.m */,
+				840A5015169D6F70000EDCFA /* PainAssessment-Prefix.pch */,
+				840A5019169D6F70000EDCFA /* Default.png */,
+				840A501B169D6F70000EDCFA /* Default@2x.png */,
+				840A501D169D6F70000EDCFA /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		840A5002169D6F70000EDCFA /* PainAssessment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 840A5027169D6F70000EDCFA /* Build configuration list for PBXNativeTarget "PainAssessment" */;
+			buildPhases = (
+				840A4FFF169D6F70000EDCFA /* Sources */,
+				840A5000169D6F70000EDCFA /* Frameworks */,
+				840A5001169D6F70000EDCFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PainAssessment;
+			productName = PainAssessment;
+			productReference = 840A5003169D6F70000EDCFA /* PainAssessment.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		840A4FFA169D6F70000EDCFA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PA;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Tragvar;
+			};
+			buildConfigurationList = 840A4FFD169D6F70000EDCFA /* Build configuration list for PBXProject "PainAssessment" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 840A4FF8169D6F70000EDCFA;
+			productRefGroup = 840A5004169D6F70000EDCFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				840A5002169D6F70000EDCFA /* PainAssessment */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		840A5001169D6F70000EDCFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840A5012169D6F70000EDCFA /* InfoPlist.strings in Resources */,
+				840A501A169D6F70000EDCFA /* Default.png in Resources */,
+				840A501C169D6F70000EDCFA /* Default@2x.png in Resources */,
+				840A501E169D6F70000EDCFA /* Default-568h@2x.png in Resources */,
+				840A5024169D6F70000EDCFA /* PAViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		840A4FFF169D6F70000EDCFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840A5014169D6F70000EDCFA /* main.m in Sources */,
+				840A5018169D6F70000EDCFA /* PAAppDelegate.m in Sources */,
+				840A5021169D6F70000EDCFA /* PAViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		840A5010169D6F70000EDCFA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				840A5011169D6F70000EDCFA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		840A5022169D6F70000EDCFA /* PAViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				840A5023169D6F70000EDCFA /* en */,
+			);
+			name = PAViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		840A5025169D6F70000EDCFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		840A5026169D6F70000EDCFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		840A5028169D6F70000EDCFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PainAssessment/PainAssessment-Prefix.pch";
+				INFOPLIST_FILE = "PainAssessment/PainAssessment-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		840A5029169D6F70000EDCFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PainAssessment/PainAssessment-Prefix.pch";
+				INFOPLIST_FILE = "PainAssessment/PainAssessment-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		840A4FFD169D6F70000EDCFA /* Build configuration list for PBXProject "PainAssessment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840A5025169D6F70000EDCFA /* Debug */,
+				840A5026169D6F70000EDCFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		840A5027169D6F70000EDCFA /* Build configuration list for PBXNativeTarget "PainAssessment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840A5028169D6F70000EDCFA /* Debug */,
+				840A5029169D6F70000EDCFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 840A4FFA169D6F70000EDCFA /* Project object */;
+}
