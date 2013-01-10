@@ -18,6 +18,21 @@
 		840A501E169D6F70000EDCFA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840A501D169D6F70000EDCFA /* Default-568h@2x.png */; };
 		840A5021169D6F70000EDCFA /* PAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A5020169D6F70000EDCFA /* PAViewController.m */; };
 		840A5024169D6F70000EDCFA /* PAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840A5022169D6F70000EDCFA /* PAViewController.xib */; };
+		840A503E169D7C31000EDCFA /* PADrawYourPainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A503C169D7C31000EDCFA /* PADrawYourPainViewController.m */; };
+		840A503F169D7C31000EDCFA /* PADrawYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840A503D169D7C31000EDCFA /* PADrawYourPainViewController.xib */; };
+		840A504A169D7D89000EDCFA /* FullBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 840A5049169D7D89000EDCFA /* FullBody.png */; };
+		840A5053169D8A0C000EDCFA /* PADescribeYourPainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A5051169D8A0C000EDCFA /* PADescribeYourPainViewController.m */; };
+		840A5054169D8A0C000EDCFA /* PADescribeYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840A5052169D8A0C000EDCFA /* PADescribeYourPainViewController.xib */; };
+		848F2C03169EAA8E00F3051F /* FootLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F2BFD169EAA8E00F3051F /* FootLeft.png */; };
+		848F2C04169EAA8E00F3051F /* FootRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F2BFE169EAA8E00F3051F /* FootRight.png */; };
+		848F2C05169EAA8E00F3051F /* HandLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F2BFF169EAA8E00F3051F /* HandLeft.png */; };
+		848F2C06169EAA8E00F3051F /* HandRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F2C00169EAA8E00F3051F /* HandRight.png */; };
+		848F2C07169EAA8E00F3051F /* KneeLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F2C01169EAA8E00F3051F /* KneeLeft.png */; };
+		848F2C08169EAA8E00F3051F /* KneeRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F2C02169EAA8E00F3051F /* KneeRight.png */; };
+		8494A51A169D9F0900E777A3 /* PACenterofYourPainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494A518169D9F0900E777A3 /* PACenterofYourPainViewController.m */; };
+		8494A51B169D9F0900E777A3 /* PACenterofYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8494A519169D9F0900E777A3 /* PACenterofYourPainViewController.xib */; };
+		8494A520169DA27F00E777A3 /* PAConfirmYourPainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494A51E169DA27F00E777A3 /* PAConfirmYourPainViewController.m */; };
+		8494A521169DA27F00E777A3 /* PAConfirmYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8494A51F169DA27F00E777A3 /* PAConfirmYourPainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +52,25 @@
 		840A501F169D6F70000EDCFA /* PAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAViewController.h; sourceTree = "<group>"; };
 		840A5020169D6F70000EDCFA /* PAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAViewController.m; sourceTree = "<group>"; };
 		840A5023169D6F70000EDCFA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PAViewController.xib; sourceTree = "<group>"; };
+		840A503B169D7C31000EDCFA /* PADrawYourPainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADrawYourPainViewController.h; sourceTree = "<group>"; };
+		840A503C169D7C31000EDCFA /* PADrawYourPainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADrawYourPainViewController.m; sourceTree = "<group>"; };
+		840A503D169D7C31000EDCFA /* PADrawYourPainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PADrawYourPainViewController.xib; sourceTree = "<group>"; };
+		840A5049169D7D89000EDCFA /* FullBody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FullBody.png; sourceTree = "<group>"; };
+		840A5050169D8A0C000EDCFA /* PADescribeYourPainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADescribeYourPainViewController.h; sourceTree = "<group>"; };
+		840A5051169D8A0C000EDCFA /* PADescribeYourPainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADescribeYourPainViewController.m; sourceTree = "<group>"; };
+		840A5052169D8A0C000EDCFA /* PADescribeYourPainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PADescribeYourPainViewController.xib; sourceTree = "<group>"; };
+		848F2BFD169EAA8E00F3051F /* FootLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FootLeft.png; sourceTree = "<group>"; };
+		848F2BFE169EAA8E00F3051F /* FootRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FootRight.png; sourceTree = "<group>"; };
+		848F2BFF169EAA8E00F3051F /* HandLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandLeft.png; sourceTree = "<group>"; };
+		848F2C00169EAA8E00F3051F /* HandRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandRight.png; sourceTree = "<group>"; };
+		848F2C01169EAA8E00F3051F /* KneeLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KneeLeft.png; sourceTree = "<group>"; };
+		848F2C02169EAA8E00F3051F /* KneeRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KneeRight.png; sourceTree = "<group>"; };
+		8494A517169D9F0900E777A3 /* PACenterofYourPainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PACenterofYourPainViewController.h; sourceTree = "<group>"; };
+		8494A518169D9F0900E777A3 /* PACenterofYourPainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PACenterofYourPainViewController.m; sourceTree = "<group>"; };
+		8494A519169D9F0900E777A3 /* PACenterofYourPainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PACenterofYourPainViewController.xib; sourceTree = "<group>"; };
+		8494A51D169DA27F00E777A3 /* PAConfirmYourPainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAConfirmYourPainViewController.h; sourceTree = "<group>"; };
+		8494A51E169DA27F00E777A3 /* PAConfirmYourPainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAConfirmYourPainViewController.m; sourceTree = "<group>"; };
+		8494A51F169DA27F00E777A3 /* PAConfirmYourPainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAConfirmYourPainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +117,11 @@
 		840A500D169D6F70000EDCFA /* PainAssessment */ = {
 			isa = PBXGroup;
 			children = (
+				840A503A169D7BDF000EDCFA /* DrawYourPain Class */,
+				840A504F169D89EA000EDCFA /* DescribeYourPain Class */,
+				8494A516169D9ED400E777A3 /* CenterofYourPain Class */,
+				8494A51C169DA25F00E777A3 /* Confirm Your Pain Class */,
+				840A5048169D7D89000EDCFA /* images */,
 				840A5016169D6F70000EDCFA /* PAAppDelegate.h */,
 				840A5017169D6F70000EDCFA /* PAAppDelegate.m */,
 				840A501F169D6F70000EDCFA /* PAViewController.h */,
@@ -105,6 +144,60 @@
 				840A501D169D6F70000EDCFA /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		840A503A169D7BDF000EDCFA /* DrawYourPain Class */ = {
+			isa = PBXGroup;
+			children = (
+				840A503B169D7C31000EDCFA /* PADrawYourPainViewController.h */,
+				840A503C169D7C31000EDCFA /* PADrawYourPainViewController.m */,
+				840A503D169D7C31000EDCFA /* PADrawYourPainViewController.xib */,
+			);
+			name = "DrawYourPain Class";
+			sourceTree = "<group>";
+		};
+		840A5048169D7D89000EDCFA /* images */ = {
+			isa = PBXGroup;
+			children = (
+				848F2BFD169EAA8E00F3051F /* FootLeft.png */,
+				848F2BFE169EAA8E00F3051F /* FootRight.png */,
+				848F2BFF169EAA8E00F3051F /* HandLeft.png */,
+				848F2C00169EAA8E00F3051F /* HandRight.png */,
+				848F2C01169EAA8E00F3051F /* KneeLeft.png */,
+				848F2C02169EAA8E00F3051F /* KneeRight.png */,
+				840A5049169D7D89000EDCFA /* FullBody.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		840A504F169D89EA000EDCFA /* DescribeYourPain Class */ = {
+			isa = PBXGroup;
+			children = (
+				840A5050169D8A0C000EDCFA /* PADescribeYourPainViewController.h */,
+				840A5051169D8A0C000EDCFA /* PADescribeYourPainViewController.m */,
+				840A5052169D8A0C000EDCFA /* PADescribeYourPainViewController.xib */,
+			);
+			name = "DescribeYourPain Class";
+			sourceTree = "<group>";
+		};
+		8494A516169D9ED400E777A3 /* CenterofYourPain Class */ = {
+			isa = PBXGroup;
+			children = (
+				8494A517169D9F0900E777A3 /* PACenterofYourPainViewController.h */,
+				8494A518169D9F0900E777A3 /* PACenterofYourPainViewController.m */,
+				8494A519169D9F0900E777A3 /* PACenterofYourPainViewController.xib */,
+			);
+			name = "CenterofYourPain Class";
+			sourceTree = "<group>";
+		};
+		8494A51C169DA25F00E777A3 /* Confirm Your Pain Class */ = {
+			isa = PBXGroup;
+			children = (
+				8494A51D169DA27F00E777A3 /* PAConfirmYourPainViewController.h */,
+				8494A51E169DA27F00E777A3 /* PAConfirmYourPainViewController.m */,
+				8494A51F169DA27F00E777A3 /* PAConfirmYourPainViewController.xib */,
+			);
+			name = "Confirm Your Pain Class";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +257,17 @@
 				840A501C169D6F70000EDCFA /* Default@2x.png in Resources */,
 				840A501E169D6F70000EDCFA /* Default-568h@2x.png in Resources */,
 				840A5024169D6F70000EDCFA /* PAViewController.xib in Resources */,
+				840A503F169D7C31000EDCFA /* PADrawYourPainViewController.xib in Resources */,
+				840A504A169D7D89000EDCFA /* FullBody.png in Resources */,
+				840A5054169D8A0C000EDCFA /* PADescribeYourPainViewController.xib in Resources */,
+				8494A51B169D9F0900E777A3 /* PACenterofYourPainViewController.xib in Resources */,
+				8494A521169DA27F00E777A3 /* PAConfirmYourPainViewController.xib in Resources */,
+				848F2C03169EAA8E00F3051F /* FootLeft.png in Resources */,
+				848F2C04169EAA8E00F3051F /* FootRight.png in Resources */,
+				848F2C05169EAA8E00F3051F /* HandLeft.png in Resources */,
+				848F2C06169EAA8E00F3051F /* HandRight.png in Resources */,
+				848F2C07169EAA8E00F3051F /* KneeLeft.png in Resources */,
+				848F2C08169EAA8E00F3051F /* KneeRight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +281,10 @@
 				840A5014169D6F70000EDCFA /* main.m in Sources */,
 				840A5018169D6F70000EDCFA /* PAAppDelegate.m in Sources */,
 				840A5021169D6F70000EDCFA /* PAViewController.m in Sources */,
+				840A503E169D7C31000EDCFA /* PADrawYourPainViewController.m in Sources */,
+				840A5053169D8A0C000EDCFA /* PADescribeYourPainViewController.m in Sources */,
+				8494A51A169D9F0900E777A3 /* PACenterofYourPainViewController.m in Sources */,
+				8494A520169DA27F00E777A3 /* PAConfirmYourPainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +403,7 @@
 				840A5029169D6F70000EDCFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
