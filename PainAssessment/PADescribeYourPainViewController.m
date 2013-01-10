@@ -1,19 +1,29 @@
 //
-//  PAViewController.m
+//  PADescribeYourPainViewController.m
 //  PainAssessment
 //
 //  Created by Admin on 1/9/13.
 //  Copyright (c) 2013 Tragvar. All rights reserved.
 //
 
-#import "PAViewController.h"
-#import "PADrawYourPainViewController.h"
+#import "PADescribeYourPainViewController.h"
+#import "PACenterofYourPainViewController.h"
 
-@interface PAViewController ()
+
+@interface PADescribeYourPainViewController ()
 
 @end
 
-@implementation PAViewController
+@implementation PADescribeYourPainViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -21,15 +31,13 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered
                                                                              target:self
                                                                              action:@selector(showNextView)];
+
 }
 
 - (void)showNextView
 {
-    PADrawYourPainViewController *numberListView = [[PADrawYourPainViewController alloc] initWithNibName:@"PADrawYourPainViewController" bundle:nil];
-    
+    PACenterofYourPainViewController *numberListView = [[PACenterofYourPainViewController alloc] initWithNibName:@"PACenterofYourPainViewController" bundle:nil];
     [self.navigationController pushViewController:numberListView animated:YES];
-    
-    
     NSLog(@"show list here");
 }
 
