@@ -53,16 +53,29 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-
-        return bodyPickerArray1Row.count;
+    if (component == 0) {
+        return [bodyPickerArray1Row count];
+    }
+    else
+    {
+        return [bodyPickerArray2Row count];
+    }
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
+    if (component == 0) {
         return [bodyPickerArray1Row objectAtIndex:row];
-   }
+    }
+    else
+    {
+        return [bodyPickerArray2Row objectAtIndex:row];
+    }
+}
+
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    if (component == 0) {       
+    
     switch (row+1) {
         case 1:
             self.drawImageView.image = [UIImage imageNamed:@"FullBody.png"];
@@ -80,7 +93,8 @@
         default:
             self.drawImageView.image = [UIImage imageNamed:@"FullBody.png"];
             break;
-    }    
+        }
+    }
 }
 
 
