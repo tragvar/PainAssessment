@@ -81,7 +81,7 @@
             self.drawImageView.image = [UIImage imageNamed:@"FullBody.png"];
             break;
         case 2:
-            if ([bodyPickerArray2Row objectAtIndex:row] == @"Left") {
+            if ([bodyPickerArray1Row objectAtIndex:row] == @"Hend" && [bodyPickerArray2Row objectAtIndex:row] == @"Right") {
             self.drawImageView.image = [UIImage imageNamed:@"HandRight.png"];
             }
             else{
