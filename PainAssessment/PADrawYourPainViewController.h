@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ACEDrawingView;
 
-@interface PADrawYourPainViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource>{
+@interface PADrawYourPainViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>{
     
     UIImageView *_imageView;
-    UITableView *_leftTableView;
     
     UIPickerView *_pickerView;
     NSArray *bodyPickerArray1Row;
@@ -20,8 +20,17 @@
     CGPoint lastPoint;
 }
 
-@property (nonatomic, retain) IBOutlet UITableView *leftTableView;
+@property (nonatomic, unsafe_unretained) IBOutlet ACEDrawingView *drawingView;
+@property (nonatomic, unsafe_unretained) IBOutlet UISlider *lineWidthSlider;
 @property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
 @property (nonatomic, retain) IBOutlet UIImageView *drawImageView;
+
+@property (nonatomic, unsafe_unretained) IBOutlet UIButton *undoButton;
+@property (nonatomic, unsafe_unretained) IBOutlet UIButton *redoButton;
+
+- (IBAction)undo:(id)sender;
+- (IBAction)redo:(id)sender;
+- (IBAction)clear:(id)sender;
+- (IBAction)widthChange:(UISlider *)sender;
 
 @end

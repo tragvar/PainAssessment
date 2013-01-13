@@ -8,15 +8,15 @@
 
 #import "PADrawYourPainViewController.h"
 #import "PADescribeYourPainViewController.h"
+#import "ACEDrawingView.h"
 
 
-@interface PADrawYourPainViewController ()
+@interface PADrawYourPainViewController ()<ACEDrawingViewDelegate>
 
 @end
 
 @implementation PADrawYourPainViewController
 
-@synthesize leftTableView;
 @synthesize pickerView;
 @synthesize drawImageView;
 
@@ -37,6 +37,15 @@
                                                                              action:@selector(showNextView)];
     bodyPickerArray1Row = [[NSArray alloc] initWithObjects:@"Full Body", @"Hend", @"Knee", @"Foot", nil];
     bodyPickerArray2Row = [[NSArray alloc] initWithObjects:@"Left", @"Right", nil];
+    
+    self.drawingView.backgroundColor = [UIColor colorWithPatternImage:self.drawImageView.image = [UIImage imageNamed:@"FullBody.png"]];
+    
+    // set the delegate
+    self.drawingView.delegate = self;
+    
+    // start with red
+    self.drawingView.lineColor = [UIColor redColor];
+    self.lineWidthSlider.value = self.drawingView.lineWidth;
 }
 
 - (void)showNextView
@@ -74,29 +83,26 @@
 
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    if (component == 0) {       
+    if (component == 0) {
+        
+        
     
     switch (row+1) {
         case 1:
-            self.drawImageView.image = [UIImage imageNamed:@"FullBody.png"];
+            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:self.drawImageView.image = [UIImage imageNamed:@"FullBody.png"]];
             break;
         case 2:
-            if ([bodyPickerArray1Row objectAtIndex:row] == @"Hend" && [bodyPickerArray2Row objectAtIndex:row] == @"Right") {
-            self.drawImageView.image = [UIImage imageNamed:@"HandRight.png"];
-            }
-            else{
-                self.drawImageView.image = [UIImage imageNamed:@"HandLeft.png"];
-            }
+            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:self.drawImageView.image = [UIImage imageNamed:@"HandRight.png"]];
             break;
         case 3:
-            self.drawImageView.image = [UIImage imageNamed:@"KneeRight.png"];
+            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:self.drawImageView.image = [UIImage imageNamed:@"KneeRight.png"]];
             break;
         case 4:
-            self.drawImageView.image = [UIImage imageNamed:@"FootRight.png"];
+            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:self.drawImageView.image = [UIImage imageNamed:@"FootRight.png"]];
             break;
             
         default:
-            self.drawImageView.image = [UIImage imageNamed:@"FullBody.png"];
+            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:self.drawImageView.image = [UIImage imageNamed:@"FullBody.png"]];
             break;
         }
     }
@@ -121,42 +127,47 @@
     return 40;
 }
 
-//Drawing methods
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+
+// BUTTONS ACTIONS
+
+- (void)updateButtonStatus
 {
-    UITouch *touch = [touches anyObject];
-    
-    if (touch.tapCount == 1) {
-        lastPoint = [touch locationInView:self.drawImageView];
-    }
-    else {
-//        drawImageView.image = nil;
-    }
+    self.undoButton.enabled = [self.drawingView canUndo];
+    self.redoButton.enabled = [self.drawingView canRedo];
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+
+- (IBAction)undo:(id)sender
 {
-    UITouch *touch = [touches anyObject];
-    CGPoint currentPoint = [touch locationInView:self.drawImageView];
-    
-    UIGraphicsBeginImageContext(self.drawImageView.frame.size);
-    CGRect drawRect = CGRectMake(0.0f, 0.0f,
-                                 self.drawImageView.frame.size.width,
-                                 self.drawImageView.frame.size.height);
-    [drawImageView.image drawInRect:drawRect];
-    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5.0f);
-    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 1.0f, 0.0f, 0.0f, 1.0f);
-    CGContextBeginPath(UIGraphicsGetCurrentContext());
-    CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
-    CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
-    CGContextStrokePath(UIGraphicsGetCurrentContext());
-    drawImageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    lastPoint = currentPoint;
+    [self.drawingView undoLatestStep];
+    [self updateButtonStatus];
 }
+
+- (IBAction)redo:(id)sender
+{
+    [self.drawingView redoLatestStep];
+    [self updateButtonStatus];
+}
+
+- (IBAction)clear:(id)sender
+{
+    [self.drawingView clear];
+    [self updateButtonStatus];
+}
+
+- (IBAction)widthChange:(UISlider *)sender
+{
+    self.drawingView.lineWidth = sender.value * 10;
+}
+
+#pragma mark - ACEDrawing View Delegate
+
+- (void)drawingView:(ACEDrawingView *)view didEndDrawFreeformAtPoint:(CGPoint)point
+{
+    [self updateButtonStatus];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
