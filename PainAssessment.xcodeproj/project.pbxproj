@@ -23,6 +23,7 @@
 		840A504A169D7D89000EDCFA /* FullBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 840A5049169D7D89000EDCFA /* FullBody.png */; };
 		840A5053169D8A0C000EDCFA /* PADescribeYourPainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A5051169D8A0C000EDCFA /* PADescribeYourPainViewController.m */; };
 		840A5054169D8A0C000EDCFA /* PADescribeYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840A5052169D8A0C000EDCFA /* PADescribeYourPainViewController.xib */; };
+		846F462916A010660096F100 /* ACEDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F462816A010660096F100 /* ACEDrawingView.m */; };
 		848F2C03169EAA8E00F3051F /* FootLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F2BFD169EAA8E00F3051F /* FootLeft.png */; };
 		848F2C04169EAA8E00F3051F /* FootRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F2BFE169EAA8E00F3051F /* FootRight.png */; };
 		848F2C05169EAA8E00F3051F /* HandLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F2BFF169EAA8E00F3051F /* HandLeft.png */; };
@@ -33,6 +34,9 @@
 		8494A51B169D9F0900E777A3 /* PACenterofYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8494A519169D9F0900E777A3 /* PACenterofYourPainViewController.xib */; };
 		8494A520169DA27F00E777A3 /* PAConfirmYourPainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494A51E169DA27F00E777A3 /* PAConfirmYourPainViewController.m */; };
 		8494A521169DA27F00E777A3 /* PAConfirmYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8494A51F169DA27F00E777A3 /* PAConfirmYourPainViewController.xib */; };
+		849B54B716A2E4E900DFCE1F /* human_body.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54B616A2E4E900DFCE1F /* human_body.png */; };
+		849B54B916A2E4F300DFCE1F /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54B816A2E4F300DFCE1F /* Default-Landscape~ipad.png */; };
+		849B54BB16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54BA16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,8 @@
 		840A5050169D8A0C000EDCFA /* PADescribeYourPainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADescribeYourPainViewController.h; sourceTree = "<group>"; };
 		840A5051169D8A0C000EDCFA /* PADescribeYourPainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADescribeYourPainViewController.m; sourceTree = "<group>"; };
 		840A5052169D8A0C000EDCFA /* PADescribeYourPainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PADescribeYourPainViewController.xib; sourceTree = "<group>"; };
+		846F462716A010660096F100 /* ACEDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEDrawingView.h; sourceTree = "<group>"; };
+		846F462816A010660096F100 /* ACEDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEDrawingView.m; sourceTree = "<group>"; };
 		848F2BFD169EAA8E00F3051F /* FootLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FootLeft.png; sourceTree = "<group>"; };
 		848F2BFE169EAA8E00F3051F /* FootRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FootRight.png; sourceTree = "<group>"; };
 		848F2BFF169EAA8E00F3051F /* HandLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandLeft.png; sourceTree = "<group>"; };
@@ -71,6 +77,9 @@
 		8494A51D169DA27F00E777A3 /* PAConfirmYourPainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAConfirmYourPainViewController.h; sourceTree = "<group>"; };
 		8494A51E169DA27F00E777A3 /* PAConfirmYourPainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAConfirmYourPainViewController.m; sourceTree = "<group>"; };
 		8494A51F169DA27F00E777A3 /* PAConfirmYourPainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAConfirmYourPainViewController.xib; sourceTree = "<group>"; };
+		849B54B616A2E4E900DFCE1F /* human_body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = human_body.png; path = PainAssessment/human_body.png; sourceTree = "<group>"; };
+		849B54B816A2E4F300DFCE1F /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		849B54BA16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +99,10 @@
 		840A4FF8169D6F70000EDCFA = {
 			isa = PBXGroup;
 			children = (
+				849B54BA16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png */,
+				849B54B816A2E4F300DFCE1F /* Default-Landscape~ipad.png */,
+				849B54B616A2E4E900DFCE1F /* human_body.png */,
+				846F462616A010660096F100 /* ACEDrawingView */,
 				840A500D169D6F70000EDCFA /* PainAssessment */,
 				840A5006169D6F70000EDCFA /* Frameworks */,
 				840A5004169D6F70000EDCFA /* Products */,
@@ -180,6 +193,15 @@
 			name = "DescribeYourPain Class";
 			sourceTree = "<group>";
 		};
+		846F462616A010660096F100 /* ACEDrawingView */ = {
+			isa = PBXGroup;
+			children = (
+				846F462716A010660096F100 /* ACEDrawingView.h */,
+				846F462816A010660096F100 /* ACEDrawingView.m */,
+			);
+			path = ACEDrawingView;
+			sourceTree = "<group>";
+		};
 		8494A516169D9ED400E777A3 /* CenterofYourPain Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +290,9 @@
 				848F2C06169EAA8E00F3051F /* HandRight.png in Resources */,
 				848F2C07169EAA8E00F3051F /* KneeLeft.png in Resources */,
 				848F2C08169EAA8E00F3051F /* KneeRight.png in Resources */,
+				849B54B716A2E4E900DFCE1F /* human_body.png in Resources */,
+				849B54B916A2E4F300DFCE1F /* Default-Landscape~ipad.png in Resources */,
+				849B54BB16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +310,7 @@
 				840A5053169D8A0C000EDCFA /* PADescribeYourPainViewController.m in Sources */,
 				8494A51A169D9F0900E777A3 /* PACenterofYourPainViewController.m in Sources */,
 				8494A520169DA27F00E777A3 /* PAConfirmYourPainViewController.m in Sources */,
+				846F462916A010660096F100 /* ACEDrawingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +358,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -354,7 +380,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -365,10 +391,15 @@
 		840A5028169D6F70000EDCFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Volodymyr Grytsenko";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Volodymyr Grytsenko";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PainAssessment/PainAssessment-Prefix.pch";
 				INFOPLIST_FILE = "PainAssessment/PainAssessment-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5A979EF7-EB52-4B07-8C36-B2EEB363179B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5A979EF7-EB52-4B07-8C36-B2EEB363179B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -376,10 +407,15 @@
 		840A5029169D6F70000EDCFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Volodymyr Grytsenko";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Volodymyr Grytsenko";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PainAssessment/PainAssessment-Prefix.pch";
 				INFOPLIST_FILE = "PainAssessment/PainAssessment-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5A979EF7-EB52-4B07-8C36-B2EEB363179B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5A979EF7-EB52-4B07-8C36-B2EEB363179B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
