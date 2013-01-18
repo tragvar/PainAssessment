@@ -12,6 +12,7 @@
 @interface PADrawYourPainViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>{
     
     UIImageView *_imageView;
+    UIColor* pixelColor;
     
     UIPickerView *_pickerView;
     NSArray *bodyPickerArray1Row;
@@ -33,5 +34,7 @@
 - (IBAction)redo:(id)sender;
 - (IBAction)clear:(id)sender;
 - (IBAction)widthChange:(UISlider *)sender;
+
+- (CGContextRef) createARGBBitmapContextFromImage:(CGImageRef) inImage;
 
 @end

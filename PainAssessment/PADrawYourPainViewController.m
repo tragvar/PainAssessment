@@ -170,12 +170,108 @@
 
 #pragma mark - ACEDrawing View Delegate
 
+-(void)drawingView:(ACEDrawingView *)view willBeginDrawFreeformAtPoint:(CGPoint)point
+{
+    if ([self getPixelColorAtLocation:point] == [UIColor redColor]) {
+        
+        NSLog(@"the color is white");
+    }
+    
+    NSLog(@"the color is NOT white!");
+}
+
 
 - (void)drawingView:(ACEDrawingView *)view didEndDrawFreeformAtPoint:(CGPoint)point
 {
     [self updateButtonStatus];
 }
 
+- (UIColor*) getPixelColorAtLocation:(CGPoint)point {
+    pixelColor = nil;
+    CGImageRef inImage = (__bridge CGImageRef)(self.drawingView.backgroundColor);
+    // Create off screen bitmap context to draw the image into. Format ARGB is 4 bytes for each pixel: Alpa, Red, Green, Blue
+    CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
+    if (cgctx == NULL) { return nil; /* error */ }
+    
+    size_t w = CGImageGetWidth(inImage);
+    size_t h = CGImageGetHeight(inImage);
+    CGRect rect = {{0,0},{w,h}};
+    
+    // Draw the image to the bitmap context. Once we draw, the memory
+    // allocated for the context for rendering will then contain the
+    // raw image data in the specified color space.
+    CGContextDrawImage(cgctx, rect, inImage);
+    
+    // Now we can get a pointer to the image data associated with the bitmap
+    // context.
+    unsigned char* data = CGBitmapContextGetData (cgctx);
+    if (data != NULL) {
+        //offset locates the pixel in the data from x,y.
+        //4 for 4 bytes of data per pixel, w is width of one row of data.
+        int offset = 4*((w*round(point.y))+round(point.x));
+        int alpha =  data[offset];
+        int red = data[offset+1];
+        int green = data[offset+2];
+        int blue = data[offset+3];
+        NSLog(@"offset: %i colors: RGB A %i %i %i  %i",offset,red,green,blue,alpha);
+        pixelColor = [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:(alpha/255.0f)];
+    }
+    
+    // When finished, release the context
+    CGContextRelease(cgctx);
+    // Free image data memory for the context
+    if (data) { free(data); }
+    
+    NSLog(@"the color is white %@", pixelColor);
+    
+    return pixelColor;
+}
+
+- (CGContextRef) createARGBBitmapContextFromImage:(CGImageRef) inImage
+{
+    CGContextRef    context = (CGContextRef)inImage;
+    CGColorSpaceRef colorSpace;
+    void *          bitmapData;
+    int             bitmapByteCount;
+    int             bitmapBytesPerRow;
+    
+    size_t width = CGImageGetWidth(inImage);
+    size_t height = CGImageGetHeight(inImage);
+    
+    bitmapBytesPerRow   = (width * 4);
+    bitmapByteCount     = (bitmapBytesPerRow * height);
+    
+    // Use the generic RGB color space.
+    colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    if (colorSpace == NULL)
+    {
+        //fprintf(stderr, "Error allocating color space\n");
+        return NULL;
+    }
+    
+    bitmapData = malloc( bitmapByteCount );
+    if (bitmapData == NULL)
+    {
+        //fprintf (stderr, "Memory not allocated!");
+        CGColorSpaceRelease( colorSpace );
+        return NULL;
+    }
+    context = CGBitmapContextCreate (bitmapData,
+                                     width,
+                                     height,
+                                     8,      // bits per component
+                                     bitmapBytesPerRow,
+                                     colorSpace,
+                                     kCGImageAlphaPremultipliedFirst);
+    if (context == NULL)
+    {
+        free (bitmapData);
+    }
+    CGColorSpaceRelease( colorSpace );
+    
+    return context;
+}
 
 - (void)didReceiveMemoryWarning
 {
