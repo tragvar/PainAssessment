@@ -25,6 +25,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @protocol ACEDrawingViewDelegate;
 
 @interface ACEDrawingView : UIView
@@ -38,7 +39,7 @@
 
 
 // get the current drawing
-@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, retain) UIImage *image;
 @property (nonatomic, readonly) NSUInteger undoSteps;
 
 

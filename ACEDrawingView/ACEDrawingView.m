@@ -134,6 +134,8 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if (self.backgroundColor != [UIColor whiteColor]) {
+        
     // init the bezier path
     self.bezierPath = [UIColoredBezierPath new];
     self.bezierPath.lineCapStyle = kCGLineCapRound;
@@ -152,10 +154,12 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     if ([self.delegate respondsToSelector:@selector(drawingView:willBeginDrawFreeformAtPoint:)]) {
         [self.delegate drawingView:self willBeginDrawFreeformAtPoint:self.currentPoint];
     }
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if (self.backgroundColor != [UIColor whiteColor]) {
     // save all the touches in the path
     UITouch *touch = [touches anyObject];
     
@@ -168,16 +172,19 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     
     // update the view
     [self setNeedsDisplay];
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if (self.backgroundColor != [UIColor whiteColor]) {
     // clear the redo queue
     [self.bufferArray removeAllObjects];
     
     // call the delegate
     if ([self.delegate respondsToSelector:@selector(drawingView:didEndDrawFreeformAtPoint:)]) {
         [self.delegate drawingView:self didEndDrawFreeformAtPoint:self.currentPoint];
+    }
     }
 }
 

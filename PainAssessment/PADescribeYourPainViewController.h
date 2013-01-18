@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PADescribeYourPainViewController : UIViewController
+@interface PADescribeYourPainViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>{
+    
+    NSArray *typeOFPain;
+}
+
+@property (nonatomic, retain) IBOutlet UISegmentedControl *segmentedControl;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+
+
 
 @end
