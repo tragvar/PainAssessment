@@ -34,11 +34,14 @@
 		8494A51B169D9F0900E777A3 /* PACenterofYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8494A519169D9F0900E777A3 /* PACenterofYourPainViewController.xib */; };
 		8494A520169DA27F00E777A3 /* PAConfirmYourPainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494A51E169DA27F00E777A3 /* PAConfirmYourPainViewController.m */; };
 		8494A521169DA27F00E777A3 /* PAConfirmYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8494A51F169DA27F00E777A3 /* PAConfirmYourPainViewController.xib */; };
+		8498B14616AD6019002779D0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8498B14516AD6019002779D0 /* QuartzCore.framework */; };
+		8498B14916AD60A3002779D0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8498B14816AD60A3002779D0 /* ImageIO.framework */; };
 		849B54B716A2E4E900DFCE1F /* human_body.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54B616A2E4E900DFCE1F /* human_body.png */; };
 		849B54B916A2E4F300DFCE1F /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54B816A2E4F300DFCE1F /* Default-Landscape~ipad.png */; };
 		849B54BB16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54BA16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png */; };
 		849B54C416A2E7EE00DFCE1F /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54C316A2E7EE00DFCE1F /* heart.png */; };
 		849B54C616A2E7F300DFCE1F /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54C516A2E7F300DFCE1F /* heart.png */; };
+		84DD191516AEA75C00B48A06 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DD191416AEA75C00B48A06 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,11 +82,14 @@
 		8494A51D169DA27F00E777A3 /* PAConfirmYourPainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAConfirmYourPainViewController.h; sourceTree = "<group>"; };
 		8494A51E169DA27F00E777A3 /* PAConfirmYourPainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAConfirmYourPainViewController.m; sourceTree = "<group>"; };
 		8494A51F169DA27F00E777A3 /* PAConfirmYourPainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAConfirmYourPainViewController.xib; sourceTree = "<group>"; };
+		8498B14516AD6019002779D0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8498B14816AD60A3002779D0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		849B54B616A2E4E900DFCE1F /* human_body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = human_body.png; path = PainAssessment/human_body.png; sourceTree = "<group>"; };
 		849B54B816A2E4F300DFCE1F /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		849B54BA16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		849B54C316A2E7EE00DFCE1F /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = PainAssessment/heart.png; sourceTree = "<group>"; };
 		849B54C516A2E7F300DFCE1F /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		84DD191416AEA75C00B48A06 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DD191516AEA75C00B48A06 /* MobileCoreServices.framework in Frameworks */,
+				8498B14916AD60A3002779D0 /* ImageIO.framework in Frameworks */,
+				8498B14616AD6019002779D0 /* QuartzCore.framework in Frameworks */,
 				840A5008169D6F70000EDCFA /* UIKit.framework in Frameworks */,
 				840A500A169D6F70000EDCFA /* Foundation.framework in Frameworks */,
 				840A500C169D6F70000EDCFA /* CoreGraphics.framework in Frameworks */,
@@ -126,6 +135,9 @@
 		840A5006169D6F70000EDCFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84DD191416AEA75C00B48A06 /* MobileCoreServices.framework */,
+				8498B14816AD60A3002779D0 /* ImageIO.framework */,
+				8498B14516AD6019002779D0 /* QuartzCore.framework */,
 				840A5007169D6F70000EDCFA /* UIKit.framework */,
 				840A5009169D6F70000EDCFA /* Foundation.framework */,
 				840A500B169D6F70000EDCFA /* CoreGraphics.framework */,
