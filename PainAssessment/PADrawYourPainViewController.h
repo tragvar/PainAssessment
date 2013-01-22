@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ImageIO/ImageIO.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
 @class ACEDrawingView;
 
 @interface PADrawYourPainViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>{
     
     UIImageView *_imageView;
     UIColor* pixelColor;
+    
     
     UIPickerView *_pickerView;
     NSArray *bodyPickerArray1Row;

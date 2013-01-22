@@ -9,6 +9,9 @@
 #import "PADrawYourPainViewController.h"
 #import "PADescribeYourPainViewController.h"
 #import "ACEDrawingView.h"
+#import <ImageIO/ImageIO.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
 
 
 @interface PADrawYourPainViewController ()<ACEDrawingViewDelegate>
@@ -186,13 +189,30 @@
     [self updateButtonStatus];
 }
 
+- (void)CGImageWriteToFile:(CGImageRef) image, NSString *path
+{
+    CFURLRef url = (CFURLRef)CFBridgingRetain([NSURL fileURLWithPath:path]);
+    CGImageDestinationRef destination = CGImageDestinationCreateWithURL(url, kUTTypePNG, 1, NULL);
+    CGImageDestinationAddImage(destination, image, nil);
+    
+    if (!CGImageDestinationFinalize(destination)) {
+        NSLog(@"Failed to write image to %@", path);
+        }
+    
+    CFRelease(destination);
+}
+
 - (UIColor*) getPixelColorAtLocation:(CGPoint)point {
     pixelColor = nil;
-    CGImageRef inImage = (__bridge CGImageRef)(self.drawingView.backgroundColor);
+    CGImageRef inImage = (CGImageRef)CFBridgingRetain((self.drawingView.backgroundColor));
+    
+    [self CGImageWriteToFile:inImage, @"TESTPicture.png"];
+
     // Create off screen bitmap context to draw the image into. Format ARGB is 4 bytes for each pixel: Alpa, Red, Green, Blue
     CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
     if (cgctx == NULL) { return nil; /* error */ }
     
+   
     size_t w = CGImageGetWidth(inImage);
     size_t h = CGImageGetHeight(inImage);
     CGRect rect = {{0,0},{w,h}};
