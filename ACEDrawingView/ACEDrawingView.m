@@ -25,6 +25,7 @@
 
 #import "ACEDrawingView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "PADrawYourPainViewController.h"
 
 #if __has_feature(objc_arc)
 #define ACE_HAS_ARC 1
@@ -134,8 +135,6 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (self.backgroundColor != [UIColor whiteColor]) {
-        
     // init the bezier path
     self.bezierPath = [UIColoredBezierPath new];
     self.bezierPath.lineCapStyle = kCGLineCapRound;
@@ -154,25 +153,116 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     if ([self.delegate respondsToSelector:@selector(drawingView:willBeginDrawFreeformAtPoint:)]) {
         [self.delegate drawingView:self willBeginDrawFreeformAtPoint:self.currentPoint];
     }
-    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (self.backgroundColor != [UIColor whiteColor]) {
+    [self getPixelColorAtLocation:self.currentPoint];
+    if (![pixelColor  isEqual:[UIColor colorWithRed:1 green:1 blue:1 alpha:1]] && self.bezierPath.lineWidth != 0) {
     // save all the touches in the path
     UITouch *touch = [touches anyObject];
-    
+
     // swith the point data
     self.previousPoint = self.currentPoint;
     self.currentPoint = [touch locationInView:self];
-    
-    // add the current point to the path
+        
+        // add the current point to the path
     [self.bezierPath addQuadCurveToPoint:midPoint(self.currentPoint, self.previousPoint) controlPoint:self.previousPoint];
     
     // update the view
     [self setNeedsDisplay];
     }
+}
+
+- (UIColor*) getPixelColorAtLocation:(CGPoint)point {
+    pixelColor = [UIColor colorWithRed:1 green: 1 blue:1 alpha:1];
+    //    CGImageRef inImage = (CGImageRef)CFBridgingRetain((_drawingView.backgroundColor));
+    CGImageRef inImage = [UIImage imageNamed:@"FullBody.png"].CGImage;
+    
+    
+    //    [self CGImageWriteToFile:inImage, @"TESTPicture.png"];
+    
+    // Create off screen bitmap context to draw the image into. Format ARGB is 4 bytes for each pixel: Alpa, Red, Green, Blue
+    CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
+    if (cgctx == NULL) { return nil; /* error */ }
+    
+    
+    size_t w = CGImageGetWidth(inImage);
+    size_t h = CGImageGetHeight(inImage);
+    CGRect rect = {{0,0},{w,h}};
+    
+    // Draw the image to the bitmap context. Once we draw, the memory
+    // allocated for the context for rendering will then contain the
+    // raw image data in the specified color space.
+    CGContextDrawImage(cgctx, rect, inImage);
+    
+    // Now we can get a pointer to the image data associated with the bitmap
+    // context.
+    unsigned char* data = CGBitmapContextGetData (cgctx);
+    if (data != NULL) {
+        //offset locates the pixel in the data from x,y.
+        //4 for 4 bytes of data per pixel, w is width of one row of data.
+        int offset = 4*((w*round(point.y))+round(point.x));
+        int alpha =  data[offset];
+        int red = data[offset+1];
+        int green = data[offset+2];
+        int blue = data[offset+3];
+        //        NSLog(@"offset: %i colors: RGB A %i %i %i  %i",offset,red,green,blue,alpha);
+        pixelColor = [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:(alpha/255.0f)];
+    }
+    
+    // When finished, release the context
+    CGContextRelease(cgctx);
+    // Free image data memory for the context
+    if (data) { free(data); }
+    
+    return pixelColor;
+}
+
+- (CGContextRef) createARGBBitmapContextFromImage:(CGImageRef) inImage
+{
+    CGContextRef    context = (CGContextRef)inImage;
+    CGColorSpaceRef colorSpace;
+    void *          bitmapData;
+    int             bitmapByteCount;
+    int             bitmapBytesPerRow;
+    
+    size_t width = CGImageGetWidth(inImage);
+    size_t height = CGImageGetHeight(inImage);
+    
+    bitmapBytesPerRow   = (width * 4);
+    bitmapByteCount     = (bitmapBytesPerRow * height);
+    
+    // Use the generic RGB color space.
+    colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    if (colorSpace == NULL)
+    {
+        //fprintf(stderr, "Error allocating color space\n");
+        return NULL;
+    }
+    
+    bitmapData = malloc( bitmapByteCount );
+    if (bitmapData == NULL)
+    {
+        //fprintf (stderr, "Memory not allocated!");
+        CGColorSpaceRelease( colorSpace );
+        return NULL;
+    }
+    context = CGBitmapContextCreate (bitmapData,
+                                     width,
+                                     height,
+                                     8,      // bits per component
+                                     bitmapBytesPerRow,
+                                     colorSpace,
+                                     kCGImageAlphaPremultipliedFirst);
+    if (context == NULL)
+    {
+        free (bitmapData);
+    }
+    CGColorSpaceRelease( colorSpace );
+    
+    return context;
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

@@ -15,7 +15,8 @@
 @interface PADrawYourPainViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>{
     
     UIImageView *_imageView;
-    UIColor* pixelColor;
+    UIColor *pixelColor;
+    UIColor *whiteC;
     
     
     UIPickerView *_pickerView;
@@ -25,10 +26,13 @@
     CGPoint lastPoint;
 }
 
+@property (nonatomic, assign) UIColor *lineColor;
+@property (nonatomic, assign) CGFloat lineWidth;
+@property (nonatomic, assign) CGFloat lineAlpha;
+
 @property (nonatomic, unsafe_unretained) IBOutlet ACEDrawingView *drawingView;
 @property (nonatomic, unsafe_unretained) IBOutlet UISlider *lineWidthSlider;
 @property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
-@property (nonatomic, retain) IBOutlet UIImageView *drawImageView;
 
 @property (nonatomic, unsafe_unretained) IBOutlet UIButton *undoButton;
 @property (nonatomic, unsafe_unretained) IBOutlet UIButton *redoButton;
@@ -39,6 +43,5 @@
 - (IBAction)clear:(id)sender;
 - (IBAction)widthChange:(UISlider *)sender;
 
-- (CGContextRef) createARGBBitmapContextFromImage:(CGImageRef) inImage;
 
 @end

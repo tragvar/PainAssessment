@@ -13,7 +13,6 @@
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBNSLayoutConstraint</string>
 			<string>IBProxyObject</string>
-			<string>IBUISegmentedControl</string>
 			<string>IBUISlider</string>
 			<string>IBUITableView</string>
 			<string>IBUITextView</string>
@@ -34,46 +33,6 @@
 			<object class="IBProxyObject" id="606714003">
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-			</object>
-			<object class="IBUISegmentedControl" id="735901038">
-				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">292</int>
-				<string key="NSFrameSize">{324, 44}</string>
-				<reference key="NSSuperview"/>
-				<string key="NSReuseIdentifierKey">_NS:9</string>
-				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-				<int key="IBNumberOfSegments">4</int>
-				<int key="IBSelectedSegmentIndex">0</int>
-				<array key="IBSegmentTitles">
-					<string>First</string>
-					<string>Second</string>
-					<string/>
-					<string/>
-				</array>
-				<array class="NSMutableArray" key="IBSegmentWidths">
-					<real value="0.0"/>
-					<real value="0.0"/>
-					<real value="0.0"/>
-					<real value="0.0"/>
-				</array>
-				<array class="NSMutableArray" key="IBSegmentEnabledStates">
-					<boolean value="YES"/>
-					<boolean value="YES"/>
-					<boolean value="YES"/>
-					<boolean value="YES"/>
-				</array>
-				<array class="NSMutableArray" key="IBSegmentContentOffsets">
-					<string>{0, 0}</string>
-					<string>{0, 0}</string>
-					<string>{0, 0}</string>
-					<string>{0, 0}</string>
-				</array>
-				<array class="NSMutableArray" key="IBSegmentImages">
-					<object class="NSNull" id="4"/>
-					<reference ref="4"/>
-					<reference ref="4"/>
-					<reference ref="4"/>
-				</array>
 			</object>
 			<object class="IBUIView" id="766721923">
 				<reference key="NSNextResponder"/>
@@ -378,14 +337,6 @@ dCB0aGUgRGVwdGggb2YgdGhlIHBhaW4geW91IGhhdmUganVzdCBzaGFkZWQuA</string>
 						<reference key="destination" ref="766721923"/>
 					</object>
 					<int key="connectionID">3</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">segmentedControl</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="735901038"/>
-					</object>
-					<int key="connectionID">116</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -1460,11 +1411,6 @@ dCB0aGUgRGVwdGggb2YgdGhlIHBhaW4geW91IGhhdmUganVzdCBzaGFkZWQuA</string>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">110</int>
-						<reference key="object" ref="735901038"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">117</int>
 						<reference key="object" ref="39851539"/>
 						<array class="NSMutableArray" key="children">
@@ -1621,7 +1567,6 @@ dCB0aGUgRGVwdGggb2YgdGhlIHBhaW4geW91IGhhdmUganVzdCBzaGFkZWQuA</string>
 					<reference ref="688877286"/>
 				</array>
 				<boolean value="NO" key="11.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
-				<string key="110.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="117.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array class="NSMutableArray" key="117.IBViewMetadataConstraints">
 					<reference ref="1055601371"/>

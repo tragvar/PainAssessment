@@ -27,8 +27,12 @@
 
 
 @protocol ACEDrawingViewDelegate;
+@class PADrawYourPainViewController;
 
-@interface ACEDrawingView : UIView
+@interface ACEDrawingView : UIView{
+    
+    UIColor *pixelColor;
+}
 
 @property (nonatomic, assign) id<ACEDrawingViewDelegate> delegate;
 
@@ -53,6 +57,8 @@
 - (BOOL)canRedo;
 - (void)redoLatestStep;
 
+- (UIColor*) getPixelColorAtLocation:(CGPoint)point;
+
 @end
 
 #pragma mark -
@@ -62,5 +68,8 @@
 @optional
 - (void)drawingView:(ACEDrawingView *)view willBeginDrawFreeformAtPoint:(CGPoint)point;
 - (void)drawingView:(ACEDrawingView *)view didEndDrawFreeformAtPoint:(CGPoint)point;
+
+- (UIColor*) getPixelColorAtLocation:(CGPoint)point;
+
 
 @end
