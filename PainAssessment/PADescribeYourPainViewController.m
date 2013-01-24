@@ -17,8 +17,9 @@
 
 @implementation PADescribeYourPainViewController
 
-@synthesize segmentedControl;
 @synthesize tableView = _tableView;
+@synthesize intensitySlider;
+@synthesize depthSlider;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,22 +37,22 @@
                                                                              target:self
                                                                              action:@selector(showNextView)];
     
+//    [intensitySlider setThumbImage:[UIImage imageNamed:@"tumb.png"] forState:UIControlStateNormal];
+    UIImage *sliderLeftTrackImage1 = [[UIImage imageNamed: @"intensitySlider.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+    UIImage *sliderRightTrackImage1 = [[UIImage imageNamed: @"intensitySlider.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+    [intensitySlider setMinimumTrackImage: sliderLeftTrackImage1 forState: UIControlStateNormal];
+    [intensitySlider setMaximumTrackImage: sliderRightTrackImage1 forState: UIControlStateNormal];
+    
+    UIImage *sliderLeftTrackImage2 = [[UIImage imageNamed: @"depthSlider.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+    UIImage *sliderRightTrackImage2 = [[UIImage imageNamed: @"depthSlider.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+    [depthSlider setMinimumTrackImage: sliderLeftTrackImage2 forState: UIControlStateNormal];
+    [depthSlider setMaximumTrackImage: sliderRightTrackImage2 forState: UIControlStateNormal];
+    
     typeOFPain = [[NSArray alloc] initWithObjects:@"Sharp", @"Numb", @"Ache", @"Burning", @"Dull",nil];
-    self.tableView.layer.borderWidth = 1.0;
-    
-    segmentedControl.transform = CGAffineTransformMakeRotation(M_PI / 2.0);
-    NSArray *arr = [segmentedControl subviews];
-    for (int i = 0; i < [arr count]; i++) {
-        UIView *v = (UIView*) [arr objectAtIndex:i];
-        NSArray *subarr = [v subviews];
-        for (int j = 0; j < [subarr count]; j++) {
-            if ([[subarr objectAtIndex:j] isKindOfClass:[UILabel class]]) {
-                UILabel *l = (UILabel*) [subarr objectAtIndex:j];
-                l.transform = CGAffineTransformMakeRotation(- M_PI / 2.0); //do the reverse of what Ben did
-            }
-        }
-    }
-    
+    self.tableView.layer.borderWidth = 2.0;
+    self.intensitySlider.layer.borderWidth = 2.0;
+    self.depthSlider.layer.borderWidth = 2.0;
+        
 }
 
 #pragma mark -

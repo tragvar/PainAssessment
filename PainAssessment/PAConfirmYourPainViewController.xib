@@ -47,6 +47,7 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrameSize">{364, 193}</string>
 								<reference key="NSSuperview" ref="169220964"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="929020606"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -75,6 +76,7 @@ IHBhaW4geW91IGp1c3Qgc2hhZGVkPw</string>
 								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{0, 492}, {364, 216}}</string>
 								<reference key="NSSuperview" ref="169220964"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="805147884"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -85,6 +87,7 @@ IHBhaW4geW91IGp1c3Qgc2hhZGVkPw</string>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{20, 201}, {156, 44}}</string>
 								<reference key="NSSuperview" ref="169220964"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="799940659"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -120,6 +123,7 @@ IHBhaW4geW91IGp1c3Qgc2hhZGVkPw</string>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{184, 201}, {160, 44}}</string>
 								<reference key="NSSuperview" ref="169220964"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="640772344"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -140,6 +144,7 @@ IHBhaW4geW91IGp1c3Qgc2hhZGVkPw</string>
 						</array>
 						<string key="NSFrame">{{10, 20}, {364, 708}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="326571381"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -150,7 +155,7 @@ IHBhaW4geW91IGp1c3Qgc2hhZGVkPw</string>
 						<array class="NSMutableArray" key="NSSubviews"/>
 						<string key="NSFrame">{{387, 43}, {631, 661}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<object class="IBUIAccessibilityConfiguration" key="IBUIAccessibilityConfiguration">
@@ -162,6 +167,7 @@ IHBhaW4geW91IGp1c3Qgc2hhZGVkPw</string>
 				</array>
 				<string key="NSFrame">{{0, 20}, {1024, 748}}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="169220964"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
@@ -763,7 +769,7 @@ IHBhaW4geW91IGp1c3Qgc2hhZGVkPw</string>
 				<string key="28.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="30.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="31.CustomClassName">ACEDrawingView</string>
+				<string key="31.CustomClassName">UIImageView</string>
 				<string key="31.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<boolean value="NO" key="31.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -811,7 +817,48 @@ IHBhaW4geW91IGp1c3Qgc2hhZGVkPw</string>
 			<nil key="sourceID"/>
 			<int key="maxID">62</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">ACEDrawingView</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ACEDrawingView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSLayoutConstraint</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">PAConfirmYourPainViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="drawingView">ACEDrawingView</string>
+						<string key="pickerView">UIPickerView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="drawingView">
+							<string key="name">drawingView</string>
+							<string key="candidateClassName">ACEDrawingView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="pickerView">
+							<string key="name">pickerView</string>
+							<string key="candidateClassName">UIPickerView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/PAConfirmYourPainViewController.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

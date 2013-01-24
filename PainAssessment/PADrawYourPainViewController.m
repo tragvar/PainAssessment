@@ -144,7 +144,7 @@
 
 - (IBAction)widthChange:(UISlider *)sender
 {
-    self.drawingView.lineWidth = sender.value * 10;
+    self.drawingView.lineWidth = sender.value * 2;
 }
 
 #pragma mark - ACEDrawing View Delegate

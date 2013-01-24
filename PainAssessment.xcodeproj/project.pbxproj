@@ -34,15 +34,16 @@
 		8494A51B169D9F0900E777A3 /* PACenterofYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8494A519169D9F0900E777A3 /* PACenterofYourPainViewController.xib */; };
 		8494A520169DA27F00E777A3 /* PAConfirmYourPainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494A51E169DA27F00E777A3 /* PAConfirmYourPainViewController.m */; };
 		8494A521169DA27F00E777A3 /* PAConfirmYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8494A51F169DA27F00E777A3 /* PAConfirmYourPainViewController.xib */; };
+		8496A58B16B185240018197D /* depthSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 8496A58916B185240018197D /* depthSlider.png */; };
+		8496A58C16B185240018197D /* intensitySlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 8496A58A16B185240018197D /* intensitySlider.png */; };
 		8496C9C516B03672001E5E47 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8496C9C416B03672001E5E47 /* MapKit.framework */; };
 		8498B14616AD6019002779D0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8498B14516AD6019002779D0 /* QuartzCore.framework */; };
 		8498B14916AD60A3002779D0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8498B14816AD60A3002779D0 /* ImageIO.framework */; };
 		849B54B716A2E4E900DFCE1F /* human_body.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54B616A2E4E900DFCE1F /* human_body.png */; };
 		849B54B916A2E4F300DFCE1F /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54B816A2E4F300DFCE1F /* Default-Landscape~ipad.png */; };
 		849B54BB16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54BA16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png */; };
-		849B54C416A2E7EE00DFCE1F /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54C316A2E7EE00DFCE1F /* heart.png */; };
-		849B54C616A2E7F300DFCE1F /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54C516A2E7F300DFCE1F /* heart.png */; };
 		84DD191516AEA75C00B48A06 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DD191416AEA75C00B48A06 /* MobileCoreServices.framework */; };
+		84F79DBB16B18DFC00ABEBB7 /* tumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F79DBA16B18DFC00ABEBB7 /* tumb.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,15 +84,16 @@
 		8494A51D169DA27F00E777A3 /* PAConfirmYourPainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAConfirmYourPainViewController.h; sourceTree = "<group>"; };
 		8494A51E169DA27F00E777A3 /* PAConfirmYourPainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAConfirmYourPainViewController.m; sourceTree = "<group>"; };
 		8494A51F169DA27F00E777A3 /* PAConfirmYourPainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAConfirmYourPainViewController.xib; sourceTree = "<group>"; };
+		8496A58916B185240018197D /* depthSlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = depthSlider.png; sourceTree = "<group>"; };
+		8496A58A16B185240018197D /* intensitySlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intensitySlider.png; sourceTree = "<group>"; };
 		8496C9C416B03672001E5E47 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8498B14516AD6019002779D0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8498B14816AD60A3002779D0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		849B54B616A2E4E900DFCE1F /* human_body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = human_body.png; path = PainAssessment/human_body.png; sourceTree = "<group>"; };
 		849B54B816A2E4F300DFCE1F /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		849B54BA16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
-		849B54C316A2E7EE00DFCE1F /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = PainAssessment/heart.png; sourceTree = "<group>"; };
-		849B54C516A2E7F300DFCE1F /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		84DD191416AEA75C00B48A06 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		84F79DBA16B18DFC00ABEBB7 /* tumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumb.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +117,9 @@
 		840A4FF8169D6F70000EDCFA = {
 			isa = PBXGroup;
 			children = (
-				849B54C516A2E7F300DFCE1F /* heart.png */,
-				849B54C316A2E7EE00DFCE1F /* heart.png */,
+				84F79DBA16B18DFC00ABEBB7 /* tumb.png */,
+				8496A58916B185240018197D /* depthSlider.png */,
+				8496A58A16B185240018197D /* intensitySlider.png */,
 				849B54BA16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png */,
 				849B54B816A2E4F300DFCE1F /* Default-Landscape~ipad.png */,
 				849B54B616A2E4E900DFCE1F /* human_body.png */,
@@ -315,8 +318,9 @@
 				849B54B716A2E4E900DFCE1F /* human_body.png in Resources */,
 				849B54B916A2E4F300DFCE1F /* Default-Landscape~ipad.png in Resources */,
 				849B54BB16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png in Resources */,
-				849B54C416A2E7EE00DFCE1F /* heart.png in Resources */,
-				849B54C616A2E7F300DFCE1F /* heart.png in Resources */,
+				8496A58B16B185240018197D /* depthSlider.png in Resources */,
+				8496A58C16B185240018197D /* intensitySlider.png in Resources */,
+				84F79DBB16B18DFC00ABEBB7 /* tumb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
