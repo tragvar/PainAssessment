@@ -14,6 +14,7 @@
 #import "ACEDrawingView.h"
 #import <ImageIO/ImageIO.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <QuartzCore/QuartzCore.h>
 
 
 
@@ -24,6 +25,7 @@
 @implementation PADrawYourPainViewController
 
 @synthesize pickerView;
+@synthesize imageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,22 +45,25 @@
     bodyPickerArray1Row = [[NSArray alloc] initWithObjects:@"Full Body", @"Hend", @"Knee", @"Foot", nil];
     bodyPickerArray2Row = [[NSArray alloc] initWithObjects:@"Left", @"Right", nil];
     
-    
+    self.imageView.image = [UIImage imageNamed:@"FullBody.png"];
     // set the delegate
     self.drawingView.delegate = self;
-    
+        
     // start with red
     self.drawingView.lineWidth = 1.5;
     self.drawingView.lineColor = [UIColor redColor];
     self.lineWidthSlider.value = self.drawingView.lineWidth;
     self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
-
-
+//    self.drawingView.image = [UIImage imageNamed:@"FullBody.png"];
+    self.drView.layer.borderWidth = 1;
+    self.drView.layer.cornerRadius = 20;
 }
 
 - (void)showNextView
 {
-    PADescribeYourPainViewController *numberListView = [[PADescribeYourPainViewController alloc] initWithNibName:@"PADescribeYourPainViewController" bundle:nil];    
+    screenShot = self.drawingView.image;
+    
+    PADescribeYourPainViewController *numberListView = [[PADescribeYourPainViewController alloc] initWithNibName:@"PADescribeYourPainViewController" bundle:nil];
     [self.navigationController pushViewController:numberListView animated:YES];
     NSLog(@"show list here");
 }

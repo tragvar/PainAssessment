@@ -8,6 +8,8 @@
 
 #import "PAConfirmYourPainViewController.h"
 #import "ACEDrawingView.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 @interface PAConfirmYourPainViewController ()
 
@@ -33,6 +35,8 @@
     bodyPickerArray2Row = [[NSArray alloc] initWithObjects:@"Left", @"Right", nil];
     
     self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
+    self.drawingView.layer.borderWidth = 1;
+    self.drawingView.layer.cornerRadius = 20;
 
 }
 

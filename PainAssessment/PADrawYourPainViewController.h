@@ -15,6 +15,7 @@
 @interface PADrawYourPainViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>{
     
     UIImageView *_imageView;
+    UIImage *screenShot;
     UIColor *pixelColor;
     UIColor *whiteC;
     
@@ -30,8 +31,10 @@
 @property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, assign) CGFloat lineAlpha;
 
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain) IBOutlet UIView *drView;
 @property (nonatomic, unsafe_unretained) IBOutlet ACEDrawingView *drawingView;
-@property (nonatomic, unsafe_unretained) IBOutlet UISlider *lineWidthSlider;
+@property (nonatomic, retain) IBOutlet UISlider *lineWidthSlider;
 @property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
 
 @property (nonatomic, unsafe_unretained) IBOutlet UIButton *undoButton;

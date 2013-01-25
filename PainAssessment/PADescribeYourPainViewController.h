@@ -17,6 +17,8 @@
 
 @property (nonatomic, retain) IBOutlet UISlider *intensitySlider;
 @property (nonatomic, retain) IBOutlet UISlider *depthSlider;
+@property (nonatomic, retain) IBOutlet UIView *ipView;
+@property (nonatomic, retain) IBOutlet UIView *dpView;
 
 
 

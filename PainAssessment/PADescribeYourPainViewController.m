@@ -37,22 +37,27 @@
                                                                              target:self
                                                                              action:@selector(showNextView)];
     
-//    [intensitySlider setThumbImage:[UIImage imageNamed:@"tumb.png"] forState:UIControlStateNormal];
-    UIImage *sliderLeftTrackImage1 = [[UIImage imageNamed: @"intensitySlider.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
-    UIImage *sliderRightTrackImage1 = [[UIImage imageNamed: @"intensitySlider.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+    [intensitySlider setThumbImage:[UIImage imageNamed:@"grad_bip.png"] forState:UIControlStateNormal];
+    UIImage *sliderLeftTrackImage1 = [[UIImage imageNamed: @"is.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+    UIImage *sliderRightTrackImage1 = [[UIImage imageNamed: @"is.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
     [intensitySlider setMinimumTrackImage: sliderLeftTrackImage1 forState: UIControlStateNormal];
     [intensitySlider setMaximumTrackImage: sliderRightTrackImage1 forState: UIControlStateNormal];
     
-    UIImage *sliderLeftTrackImage2 = [[UIImage imageNamed: @"depthSlider.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
-    UIImage *sliderRightTrackImage2 = [[UIImage imageNamed: @"depthSlider.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+    [depthSlider setThumbImage:[UIImage imageNamed:@"grad_bip.png"] forState:UIControlStateNormal];
+    UIImage *sliderLeftTrackImage2 = [[UIImage imageNamed: @"ds.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+    UIImage *sliderRightTrackImage2 = [[UIImage imageNamed: @"ds.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
     [depthSlider setMinimumTrackImage: sliderLeftTrackImage2 forState: UIControlStateNormal];
     [depthSlider setMaximumTrackImage: sliderRightTrackImage2 forState: UIControlStateNormal];
     
     typeOFPain = [[NSArray alloc] initWithObjects:@"Sharp", @"Numb", @"Ache", @"Burning", @"Dull",nil];
-    self.tableView.layer.borderWidth = 2.0;
-    self.intensitySlider.layer.borderWidth = 2.0;
-    self.depthSlider.layer.borderWidth = 2.0;
-        
+
+    self.tableView.layer.borderWidth = 1;
+    self.tableView.layer.cornerRadius = 10;
+    
+    self.intensitySlider.layer.borderWidth = 1;
+    self.depthSlider.layer.borderWidth = 1;
+    self.intensitySlider.layer.cornerRadius = 10;
+    self.depthSlider.layer.cornerRadius = 10;
 }
 
 #pragma mark -

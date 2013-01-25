@@ -7,8 +7,12 @@
 //
 
 #import "PACenterofYourPainViewController.h"
+#import "PADrawYourPainViewController.h"
 #import "PAConfirmYourPainViewController.h"
 #import "ACEDrawingView.h"
+#import <QuartzCore/QuartzCore.h>
+
+
 
 
 @interface PACenterofYourPainViewController ()
@@ -34,18 +38,21 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered
                                                                              target:self
                                                                              action:@selector(showNextView)];
-    
+ 
     bodyPickerArray1Row = [[NSArray alloc] initWithObjects:@"Full Body", @"Hend", @"Knee", @"Foot", nil];
     bodyPickerArray2Row = [[NSArray alloc] initWithObjects:@"Left", @"Right", nil];
     
     self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
+//    self.drawingView.image =  screenShot;
+    self.drawingView.layer.borderWidth = 1;
+    self.drawingView.layer.cornerRadius = 20;
 
 }
 
 
 
 - (void)showNextView
-{
+{  
     PAConfirmYourPainViewController *numberListView = [[PAConfirmYourPainViewController alloc] initWithNibName:@"PAConfirmYourPainViewController" bundle:nil];
     [self.navigationController pushViewController:numberListView animated:YES];
     NSLog(@"show list here");
