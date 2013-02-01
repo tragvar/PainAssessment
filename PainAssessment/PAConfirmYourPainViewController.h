@@ -17,7 +17,7 @@
     NSArray *bodyPickerArray2Row;
 }
 
-@property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
+@property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
 @property (nonatomic, unsafe_unretained) IBOutlet ACEDrawingView *drawingView;
 
 @end

@@ -11,8 +11,11 @@
 
 #import "PADrawYourPainViewController.h"
 #import "PADescribeYourPainViewController.h"
+#import "PACenterofYourPainViewController.h"
 #import "ACEDrawingView.h"
-#import <ImageIO/ImageIO.h>
+#import "PAReportOnPain.h"
+
+
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <QuartzCore/QuartzCore.h>
 
@@ -26,6 +29,7 @@
 
 @synthesize pickerView;
 @synthesize imageView;
+@synthesize screenShotDraw = _screenShotDraw;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -61,11 +65,36 @@
 
 - (void)showNextView
 {
-    screenShot = self.drawingView.image;
-    
+    [self getScreenShot];
     PADescribeYourPainViewController *numberListView = [[PADescribeYourPainViewController alloc] initWithNibName:@"PADescribeYourPainViewController" bundle:nil];
     [self.navigationController pushViewController:numberListView animated:YES];
     NSLog(@"show list here");
+}
+
+
+- (UIImage*) getScreenShot{
+
+    CGRect rect = [self.drView bounds];
+    UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
+//    UIGraphicsBeginImageContext(CGSizeMake(631,708));
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    self.fillRect = &(rect);
+    [self.drView.layer renderInContext:context];
+    UIImage *scr = UIGraphicsGetImageFromCurrentImageContext();
+    
+    self.screenShotDraw = scr;
+    UIGraphicsEndImageContext();
+    
+//    NSString  *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/111capturedImage.jpg"]];
+//    [UIImageJPEGRepresentation(scr, 1) writeToFile:imagePath atomically:YES];
+    
+    return scr;
+}
+
+- (void)drawFill:(CGRect)rect {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
+    CGContextFillPath(context);
 }
 
 #pragma mark - Picker view data source
@@ -94,12 +123,8 @@
     }
 }
 
-
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     if (component == 0) {
-        
-        
-    
     switch (row+1) {
         case 1:
             self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
@@ -122,34 +147,34 @@
 }
 
 
-- (void)updateButtonStatus
-{
+- (void)updateButtonStatus{
     self.undoButton.enabled = [self.drawingView canUndo];
     self.redoButton.enabled = [self.drawingView canRedo];
 }
 
-
-- (IBAction)undo:(id)sender
-{
+- (IBAction)undo:(id)sender{
     [self.drawingView undoLatestStep];
     [self updateButtonStatus];
 }
 
-- (IBAction)redo:(id)sender
-{
+- (IBAction)redo:(id)sender{
     [self.drawingView redoLatestStep];
     [self updateButtonStatus];
 }
 
-- (IBAction)clear:(id)sender
-{
+- (IBAction)clear:(id)sender{
     [self.drawingView clear];
     [self updateButtonStatus];
 }
 
-- (IBAction)widthChange:(UISlider *)sender
-{
+- (IBAction)widthChange:(UISlider *)sender{
     self.drawingView.lineWidth = sender.value * 2;
+}
+
+- (IBAction)fill:(id)sender
+{
+    [self drawFill:*(self.fillRect)];
+    [self updateButtonStatus];
 }
 
 #pragma mark - ACEDrawing View Delegate

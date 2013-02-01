@@ -13,12 +13,12 @@
     NSArray *typeOFPain;
 }
 
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
-@property (nonatomic, retain) IBOutlet UISlider *intensitySlider;
-@property (nonatomic, retain) IBOutlet UISlider *depthSlider;
-@property (nonatomic, retain) IBOutlet UIView *ipView;
-@property (nonatomic, retain) IBOutlet UIView *dpView;
+@property (nonatomic, strong) IBOutlet UISlider *intensitySlider;
+@property (nonatomic, strong) IBOutlet UISlider *depthSlider;
+@property (nonatomic, strong) IBOutlet UIView *ipView;
+@property (nonatomic, strong) IBOutlet UIView *dpView;
 
 
 

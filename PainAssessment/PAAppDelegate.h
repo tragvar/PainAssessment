@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PAReportOnPain.h"
 
 @class PAViewController;
+@class PAReportOnPain;
+
 
 @interface PAAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) PAViewController *viewController;
+@property (nonatomic, strong) PAReportOnPain *reportOnPain;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 
 

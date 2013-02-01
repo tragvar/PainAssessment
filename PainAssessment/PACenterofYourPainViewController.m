@@ -12,16 +12,19 @@
 #import "ACEDrawingView.h"
 #import <QuartzCore/QuartzCore.h>
 
+@class PADrawYourPainViewController;
 
 
-
-@interface PACenterofYourPainViewController ()
-
-@end
+//@interface PACenterofYourPainViewController ()
+//
+//@property (nonatomic, strong) UIImage *screenShot;
+//
+//@end
 
 @implementation PACenterofYourPainViewController
 
 @synthesize pickerView;
+@synthesize screenShotCenter;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +38,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    PADrawYourPainViewController *obj = [[PADrawYourPainViewController alloc]init];
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered
                                                                              target:self
                                                                              action:@selector(showNextView)];
@@ -42,11 +47,14 @@
     bodyPickerArray1Row = [[NSArray alloc] initWithObjects:@"Full Body", @"Hend", @"Knee", @"Foot", nil];
     bodyPickerArray2Row = [[NSArray alloc] initWithObjects:@"Left", @"Right", nil];
     
-    self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
-//    self.drawingView.image =  screenShot;
+//    self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
+//    self.drawingView.backgroundColor = [UIColor colorWithPatternImage:obj.screenShotDraw];
+
+ 
+//    screenShotCenter = [];
+    self.drawingView.image = screenShotCenter;
     self.drawingView.layer.borderWidth = 1;
     self.drawingView.layer.cornerRadius = 20;
-
 }
 
 

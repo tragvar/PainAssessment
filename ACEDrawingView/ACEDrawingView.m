@@ -176,11 +176,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 
 - (UIColor*) getPixelColorAtLocation:(CGPoint)point {
     pixelColor = [UIColor colorWithRed:1 green: 1 blue:1 alpha:1];
-    //    CGImageRef inImage = (CGImageRef)CFBridgingRetain((_drawingView.backgroundColor));
-    CGImageRef inImage = [UIImage imageNamed:@"FullBody.png"].CGImage;
-    
-    
-    //    [self CGImageWriteToFile:inImage, @"TESTPicture.png"];
+    CGImageRef inImage = self.image.CGImage;   
     
     // Create off screen bitmap context to draw the image into. Format ARGB is 4 bytes for each pixel: Alpa, Red, Green, Blue
     CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
@@ -261,7 +257,6 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
         free (bitmapData);
     }
     CGColorSpaceRelease( colorSpace );
-    
     return context;
 }
 

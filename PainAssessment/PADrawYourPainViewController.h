@@ -11,14 +11,15 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @class ACEDrawingView;
+@class PAReportOnPain;
 
 @interface PADrawYourPainViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>{
     
     UIImageView *_imageView;
-    UIImage *screenShot;
     UIColor *pixelColor;
     UIColor *whiteC;
-    
+    UIImage *_screenShotDraw;
+    CGRect *_fillRect;
     
     UIPickerView *_pickerView;
     NSArray *bodyPickerArray1Row;
@@ -26,16 +27,17 @@
     
     CGPoint lastPoint;
 }
-
 @property (nonatomic, assign) UIColor *lineColor;
 @property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, assign) CGFloat lineAlpha;
+@property (nonatomic, strong) UIImage *screenShotDraw;
+@property (nonatomic, assign) CGRect *fillRect;
 
-@property (nonatomic, retain) IBOutlet UIImageView *imageView;
-@property (nonatomic, retain) IBOutlet UIView *drView;
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) IBOutlet UIView *drView;
 @property (nonatomic, unsafe_unretained) IBOutlet ACEDrawingView *drawingView;
-@property (nonatomic, retain) IBOutlet UISlider *lineWidthSlider;
-@property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
+@property (nonatomic, strong) IBOutlet UISlider *lineWidthSlider;
+@property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
 
 @property (nonatomic, unsafe_unretained) IBOutlet UIButton *undoButton;
 @property (nonatomic, unsafe_unretained) IBOutlet UIButton *redoButton;
@@ -44,7 +46,10 @@
 - (IBAction)undo:(id)sender;
 - (IBAction)redo:(id)sender;
 - (IBAction)clear:(id)sender;
+- (IBAction)fill:(id)sender;
 - (IBAction)widthChange:(UISlider *)sender;
 
+- (void)drawFill:(CGRect)rect;
+- (UIImage*) getScreenShot;
 
 @end

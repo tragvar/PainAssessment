@@ -10,15 +10,19 @@
 #import "ACEDrawingView.h"
 
 
-@interface PACenterofYourPainViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>{
+@interface PACenterofYourPainViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>{
     
     UIPickerView *_pickerView;
     NSArray *bodyPickerArray1Row;
     NSArray *bodyPickerArray2Row;
+    
 }
 
-@property (nonatomic, retain) IBOutlet UIPickerView *pickerView;
-@property (nonatomic, unsafe_unretained) IBOutlet ACEDrawingView *drawingView;
+
+@property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
+@property (nonatomic, unsafe_unretained) IBOutlet UIImageView *drawingView;
+
+@property (nonatomic, readwrite) UIImage *screenShotCenter;
 
 
 

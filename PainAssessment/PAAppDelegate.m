@@ -9,10 +9,12 @@
 #import "PAAppDelegate.h"
 
 #import "PAViewController.h"
+#import "PAReportOnPain.h"
 
 @implementation PAAppDelegate
 
 @synthesize navigationController;
+@synthesize reportOnPain;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -20,11 +22,11 @@
     // Override point for customization after application launch.
     self.viewController = [[PAViewController alloc] initWithNibName:@"PAViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
+    self.reportOnPain = [[PAReportOnPain alloc]init];
     
     self.navigationController = [[UINavigationController alloc]initWithRootViewController:self.viewController];
-    
+        
     self.window.rootViewController = self.navigationController;
-
     
     [self.window makeKeyAndVisible];
     return YES;

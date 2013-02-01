@@ -42,6 +42,7 @@
 @property (nonatomic, assign) CGFloat lineAlpha;
 
 
+
 // get the current drawing
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, readonly) NSUInteger undoSteps;
@@ -57,6 +58,7 @@
 - (BOOL)canRedo;
 - (void)redoLatestStep;
 
+
 - (UIColor*) getPixelColorAtLocation:(CGPoint)point;
 
 @end
@@ -68,6 +70,7 @@
 @optional
 - (void)drawingView:(ACEDrawingView *)view willBeginDrawFreeformAtPoint:(CGPoint)point;
 - (void)drawingView:(ACEDrawingView *)view didEndDrawFreeformAtPoint:(CGPoint)point;
+
 
 - (UIColor*) getPixelColorAtLocation:(CGPoint)point;
 
