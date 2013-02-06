@@ -19,7 +19,6 @@
     UIColor *pixelColor;
     UIColor *whiteC;
     UIImage *_screenShotDraw;
-    CGRect *_fillRect;
     
     UIPickerView *_pickerView;
     NSArray *bodyPickerArray1Row;
@@ -31,7 +30,6 @@
 @property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, assign) CGFloat lineAlpha;
 @property (nonatomic, strong) UIImage *screenShotDraw;
-@property (nonatomic, assign) CGRect *fillRect;
 
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) IBOutlet UIView *drView;
@@ -46,10 +44,8 @@
 - (IBAction)undo:(id)sender;
 - (IBAction)redo:(id)sender;
 - (IBAction)clear:(id)sender;
-- (IBAction)fill:(id)sender;
 - (IBAction)widthChange:(UISlider *)sender;
 
-- (void)drawFill:(CGRect)rect;
 - (UIImage*) getScreenShot;
 
 @end

@@ -25,7 +25,6 @@
 
 #import "ACEDrawingView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "PADrawYourPainViewController.h"
 
 #if __has_feature(objc_arc)
 #define ACE_HAS_ARC 1
@@ -127,6 +126,13 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     {
         [path.lineColor setStroke];
         [path strokeWithBlendMode:kCGBlendModeNormal alpha:path.lineAlpha];
+        
+//        [path setLineWidth:_lineWidth];
+        [path setLineJoinStyle:kCGLineJoinRound];
+        [path setLineCapStyle:kCGLineCapRound];
+        [path setLineColor:[UIColor redColor]];
+        
+        [path fillWithBlendMode:kCGBlendModeNormal alpha:0.5];
     }
 }
 

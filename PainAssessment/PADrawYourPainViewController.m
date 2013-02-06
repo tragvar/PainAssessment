@@ -15,7 +15,6 @@
 #import "ACEDrawingView.h"
 #import "PAReportOnPain.h"
 
-
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <QuartzCore/QuartzCore.h>
 
@@ -58,7 +57,6 @@
     self.drawingView.lineColor = [UIColor redColor];
     self.lineWidthSlider.value = self.drawingView.lineWidth;
     self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
-//    self.drawingView.image = [UIImage imageNamed:@"FullBody.png"];
     self.drView.layer.borderWidth = 1;
     self.drView.layer.cornerRadius = 20;
 }
@@ -73,28 +71,31 @@
 
 
 - (UIImage*) getScreenShot{
+    
+//    UIGraphicsBeginImageContextWithOptions(self.drawingView.bounds.size, self.drawingView.opaque, 0.0);
+//    [self.drawingView.layer renderInContext:UIGraphicsGetCurrentContext()];
+//    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    self.screenShotDraw = img;
+//    
+//    return img;
 
-    CGRect rect = [self.drView bounds];
+    CGRect rect = [self.drawingView bounds];
     UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
-//    UIGraphicsBeginImageContext(CGSizeMake(631,708));
     CGContextRef context = UIGraphicsGetCurrentContext();
-    self.fillRect = &(rect);
-    [self.drView.layer renderInContext:context];
+    [self.drawingView.layer renderInContext:context];
     UIImage *scr = UIGraphicsGetImageFromCurrentImageContext();
     
     self.screenShotDraw = scr;
+    
     UIGraphicsEndImageContext();
-    
-//    NSString  *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/111capturedImage.jpg"]];
-//    [UIImageJPEGRepresentation(scr, 1) writeToFile:imagePath atomically:YES];
-    
+   
     return scr;
 }
 
-- (void)drawFill:(CGRect)rect {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
-    CGContextFillPath(context);
+- (void)drawFill:(CGRect)rect{
+
 }
 
 #pragma mark - Picker view data source
@@ -171,11 +172,6 @@
     self.drawingView.lineWidth = sender.value * 2;
 }
 
-- (IBAction)fill:(id)sender
-{
-    [self drawFill:*(self.fillRect)];
-    [self updateButtonStatus];
-}
 
 #pragma mark - ACEDrawing View Delegate
 

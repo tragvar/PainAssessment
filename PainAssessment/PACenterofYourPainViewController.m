@@ -47,12 +47,12 @@
     bodyPickerArray1Row = [[NSArray alloc] initWithObjects:@"Full Body", @"Hend", @"Knee", @"Foot", nil];
     bodyPickerArray2Row = [[NSArray alloc] initWithObjects:@"Left", @"Right", nil];
     
-//    self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
+    self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
 //    self.drawingView.backgroundColor = [UIColor colorWithPatternImage:obj.screenShotDraw];
 
  
 //    screenShotCenter = [];
-    self.drawingView.image = screenShotCenter;
+    self.drawingView.image = obj.screenShotDraw;
     self.drawingView.layer.borderWidth = 1;
     self.drawingView.layer.cornerRadius = 20;
 }

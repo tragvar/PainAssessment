@@ -41,6 +41,7 @@
 @property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, assign) CGFloat lineAlpha;
 
+@property (nonatomic, assign) CGContextRef *fillContext;
 
 
 // get the current drawing
