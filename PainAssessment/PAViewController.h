@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PAReportOnPain.h"
 
-@interface PAViewController : UIViewController
+@interface PAViewController : UIViewController{
+    
+}
 
 @end

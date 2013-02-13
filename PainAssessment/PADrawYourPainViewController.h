@@ -9,16 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <ImageIO/ImageIO.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "PACenterofYourPainViewController.h"
 
 @class ACEDrawingView;
 @class PAReportOnPain;
 
-@interface PADrawYourPainViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>{
+@interface PADrawYourPainViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource >{
     
     UIImageView *_imageView;
     UIColor *pixelColor;
     UIColor *whiteC;
-    UIImage *_screenShotDraw;
+    UIImage *screenShotDraw;
     
     UIPickerView *_pickerView;
     NSArray *bodyPickerArray1Row;
@@ -30,6 +31,7 @@
 @property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, assign) CGFloat lineAlpha;
 @property (nonatomic, strong) UIImage *screenShotDraw;
+//@property (nonatomic, strong) PAReportOnPain *reportOnPain;
 
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) IBOutlet UIView *drView;
@@ -37,8 +39,8 @@
 @property (nonatomic, strong) IBOutlet UISlider *lineWidthSlider;
 @property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
 
-@property (nonatomic, unsafe_unretained) IBOutlet UIButton *undoButton;
-@property (nonatomic, unsafe_unretained) IBOutlet UIButton *redoButton;
+@property (nonatomic, strong) IBOutlet UIButton *undoButton;
+@property (nonatomic, strong) IBOutlet UIButton *redoButton;
 
 
 - (IBAction)undo:(id)sender;
@@ -46,6 +48,8 @@
 - (IBAction)clear:(id)sender;
 - (IBAction)widthChange:(UISlider *)sender;
 
-- (UIImage*) getScreenShot;
+- (UIImage*) setScreenShot;
++ (UIImage*) getScreenShot: (PACenterofYourPainViewController*)obj;
+
 
 @end

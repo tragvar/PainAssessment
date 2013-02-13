@@ -71,6 +71,7 @@
 @optional
 - (void)drawingView:(ACEDrawingView *)view willBeginDrawFreeformAtPoint:(CGPoint)point;
 - (void)drawingView:(ACEDrawingView *)view didEndDrawFreeformAtPoint:(CGPoint)point;
+- (void)changeColor:(UIColor*)color;
 
 
 - (UIColor*) getPixelColorAtLocation:(CGPoint)point;

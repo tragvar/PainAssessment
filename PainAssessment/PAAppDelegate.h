@@ -18,7 +18,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) PAViewController *viewController;
-@property (nonatomic, strong) PAReportOnPain *reportOnPain;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 
 

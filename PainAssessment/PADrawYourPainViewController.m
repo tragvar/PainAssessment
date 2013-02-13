@@ -26,9 +26,11 @@
 
 @implementation PADrawYourPainViewController
 
+@synthesize drView;
 @synthesize pickerView;
 @synthesize imageView;
-@synthesize screenShotDraw = _screenShotDraw;
+@synthesize screenShotDraw;
+//@synthesize reportOnPain;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,40 +65,39 @@
 
 - (void)showNextView
 {
-    [self getScreenShot];
+    [self setScreenShot];
+    [PAReportOnPain sharedInstance].imageOfPain = self.screenShotDraw;
     PADescribeYourPainViewController *numberListView = [[PADescribeYourPainViewController alloc] initWithNibName:@"PADescribeYourPainViewController" bundle:nil];
     [self.navigationController pushViewController:numberListView animated:YES];
     NSLog(@"show list here");
 }
-
-
-- (UIImage*) getScreenShot{
-    
-//    UIGraphicsBeginImageContextWithOptions(self.drawingView.bounds.size, self.drawingView.opaque, 0.0);
-//    [self.drawingView.layer renderInContext:UIGraphicsGetCurrentContext()];
-//    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    
-//    self.screenShotDraw = img;
-//    
-//    return img;
-
-    CGRect rect = [self.drawingView bounds];
-    UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self.drawingView.layer renderInContext:context];
-    UIImage *scr = UIGraphicsGetImageFromCurrentImageContext();
-    
-    self.screenShotDraw = scr;
-    
-    UIGraphicsEndImageContext();
    
-    return scr;
+- (UIImage*) setScreenShot{
+    
+    UIGraphicsBeginImageContextWithOptions(self.drawingView.bounds.size, self.drawingView.opaque, 0.0);
+    [self.drawingView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    self.screenShotDraw = img;
+
+//    UIGraphicsEndImageContext();
+    
+    
+    return img;
+
+//    CGRect rect = [self.drView bounds];    
+//    UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    [self.drView.layer renderInContext:context];
+//    UIImage *scr = UIGraphicsGetImageFromCurrentImageContext();
+//    
+////    [reportOnPain setImageOfPain:scr];
+//    
+//    UIGraphicsEndImageContext();
+//   
+//    return scr;
 }
 
-- (void)drawFill:(CGRect)rect{
-
-}
 
 #pragma mark - Picker view data source
 
@@ -175,23 +176,10 @@
 
 #pragma mark - ACEDrawing View Delegate
 
-//-(void)drawingView:(ACEDrawingView *)view willBeginDrawFreeformAtPoint:(CGPoint)point
-//{
-////    [self getPixelColorAtLocation:point];
-//    whiteC = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
-////    pixelColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
-//
-//    if ([pixelColor isEqual:whiteC]) {
-//        NSLog(@"THE COLOR IS WHITE!!!");
-//    }
-//}
-
-
 - (void)drawingView:(ACEDrawingView *)view didEndDrawFreeformAtPoint:(CGPoint)point
 {
     [self updateButtonStatus];
 }
-
 
 
 //- (UIColor*) getPixelColorAtLocation:(CGPoint)point {

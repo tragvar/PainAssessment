@@ -10,21 +10,19 @@
 #import "PADrawYourPainViewController.h"
 #import "PAConfirmYourPainViewController.h"
 #import "ACEDrawingView.h"
+#import "PAReportOnPain.h"
+#import <MapKit/MapKit.h>
 #import <QuartzCore/QuartzCore.h>
 
 @class PADrawYourPainViewController;
-
-
-//@interface PACenterofYourPainViewController ()
-//
-//@property (nonatomic, strong) UIImage *screenShot;
-//
-//@end
 
 @implementation PACenterofYourPainViewController
 
 @synthesize pickerView;
 @synthesize screenShotCenter;
+@synthesize drView;
+@synthesize reportOnPian;
+@synthesize point;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,7 +37,7 @@
 {
     [super viewDidLoad];
     PADrawYourPainViewController *obj = [[PADrawYourPainViewController alloc]init];
-    
+        
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered
                                                                              target:self
                                                                              action:@selector(showNextView)];
@@ -47,14 +45,11 @@
     bodyPickerArray1Row = [[NSArray alloc] initWithObjects:@"Full Body", @"Hend", @"Knee", @"Foot", nil];
     bodyPickerArray2Row = [[NSArray alloc] initWithObjects:@"Left", @"Right", nil];
     
-    self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
-//    self.drawingView.backgroundColor = [UIColor colorWithPatternImage:obj.screenShotDraw];
-
- 
-//    screenShotCenter = [];
-    self.drawingView.image = obj.screenShotDraw;
-    self.drawingView.layer.borderWidth = 1;
-    self.drawingView.layer.cornerRadius = 20;
+    screenShotCenter = [obj setScreenShot];
+    self.drawingView.image = [PAReportOnPain sharedInstance].imageOfPain;
+    [self.mapView addSubview:self.drawingView];
+    self.drView.layer.borderWidth = 1;
+    self.drView.layer.cornerRadius = 20;
 }
 
 
@@ -64,6 +59,37 @@
     PAConfirmYourPainViewController *numberListView = [[PAConfirmYourPainViewController alloc] initWithNibName:@"PAConfirmYourPainViewController" bundle:nil];
     [self.navigationController pushViewController:numberListView animated:YES];
     NSLog(@"show list here");
+}
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    point = [[MKPointAnnotation alloc] init];
+    UITouch *touch = [touches anyObject];
+    self.currentPoint = [touch locationInView:self.drawingView];
+    
+    CLLocationCoordinate2D location;
+    location.latitude = self.currentPoint.x;
+    location.longitude = self.currentPoint.y;
+    point.coordinate = location;
+    
+//    [point setAccessibilityActivationPoint:self.currentPoint];
+//    [point setTitle:@"zdghn"];
+    
+    NSLog(@" %f, %f", self.currentPoint.x, self.currentPoint.y);
+    
+    [self.mapView viewForAnnotation:point];
+
+    [self.mapView addAnnotation:point];
+}
+
+- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id ) annotation{
+    MKPinAnnotationView *annView=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"currentloc"];
+    annView.pinColor = MKPinAnnotationColorGreen;
+    annView.animatesDrop=TRUE;
+    annView.canShowCallout = YES;
+    annView.calloutOffset = CGPointMake(-5, 5);
+    return annView;
 }
 
 #pragma mark - Picker view data source

@@ -129,9 +129,9 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
         
 //        [path setLineWidth:_lineWidth];
         [path setLineJoinStyle:kCGLineJoinRound];
-        [path setLineCapStyle:kCGLineCapRound];
+        [path setLineCapStyle:kCGLineCapSquare];
         [path setLineColor:[UIColor redColor]];
-        
+//        [path setLineDash:2 count:5 phase:0.0f];
         [path fillWithBlendMode:kCGBlendModeNormal alpha:0.5];
     }
 }
@@ -179,6 +179,12 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     [self setNeedsDisplay];
     }
 }
+
+- (void)changeColor:(UIColor*)color{
+    
+    
+}
+
 
 - (UIColor*) getPixelColorAtLocation:(CGPoint)point {
     pixelColor = [UIColor colorWithRed:1 green: 1 blue:1 alpha:1];

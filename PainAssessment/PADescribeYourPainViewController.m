@@ -20,6 +20,7 @@
 @synthesize tableView = _tableView;
 @synthesize intensitySlider;
 @synthesize depthSlider;
+@synthesize lineColor;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,7 +58,23 @@
     self.intensitySlider.layer.borderWidth = 1;
     self.depthSlider.layer.borderWidth = 1;
     self.intensitySlider.layer.cornerRadius = 10;
-    self.depthSlider.layer.cornerRadius = 10;
+    self.depthSlider.layer.cornerRadius = 10;    
+}
+
+- (UIColor*) setLineC
+{
+    UIColor *color = self.lineColor;
+    NSLog(@"@%@",color);
+
+    return color;
+}
+- (IBAction)intensitySliderChange:(UISlider *)sender{
+    self.lineColor = [UIColor colorWithRed:self.intensitySlider.value green:self.intensitySlider.value blue:self.intensitySlider.value alpha:1 ];
+    NSLog(@"@%@",lineColor);
+}
+
+- (IBAction)depthSliderChange:(UISlider *)sender{
+//    self.drawingView.lineWidth = sender.value * 2;
 }
 
 #pragma mark -

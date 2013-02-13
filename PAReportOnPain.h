@@ -10,6 +10,11 @@
 
 @interface PAReportOnPain : NSObject{
     
+    UIImage *imageOfPain;
+    NSString *typeOfPain;
+    NSInteger *intensityOfPain;
+    NSInteger *depthOfPain;
+    NSString *describeOfPain;    
 }
 
 @property (nonatomic, retain) UIImage *imageOfPain;
@@ -17,5 +22,8 @@
 @property (nonatomic, assign) NSInteger *intensityOfPain;
 @property (nonatomic, assign) NSInteger *depthOfPain;
 @property (nonatomic, retain) NSString *describeOfPain;
+
++ (PAReportOnPain *) sharedInstance;
+
 
 @end
