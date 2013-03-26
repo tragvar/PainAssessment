@@ -61,15 +61,17 @@
     self.depthSlider.layer.cornerRadius = 10;    
 }
 
-- (UIColor*) setLineC
-{
+- (UIColor*) setLineC{
     UIColor *color = self.lineColor;
     NSLog(@"@%@",color);
 
     return color;
 }
+
 - (IBAction)intensitySliderChange:(UISlider *)sender{
     self.lineColor = [UIColor colorWithRed:self.intensitySlider.value green:self.intensitySlider.value blue:self.intensitySlider.value alpha:1 ];
+    [PAReportOnPain sharedInstance].intensityOfPain = self.lineColor;
+//    [PAReportOnPain sharedInstance].depthOfPain = self.intensitySlider.value;
     NSLog(@"@%@",lineColor);
 }
 
@@ -80,8 +82,7 @@
 #pragma mark -
 #pragma mark Table View Data Source Methods
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [typeOFPain count];
 }
 
@@ -98,18 +99,13 @@
     return cell;
 }
 
-
-
-
-- (void)showNextView
-{
+- (void)showNextView{
     PACenterofYourPainViewController *numberListView = [[PACenterofYourPainViewController alloc] initWithNibName:@"PACenterofYourPainViewController" bundle:nil];
     [self.navigationController pushViewController:numberListView animated:YES];
     NSLog(@"show list here");
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

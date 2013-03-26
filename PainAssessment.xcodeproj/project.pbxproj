@@ -23,6 +23,7 @@
 		840A504A169D7D89000EDCFA /* FullBody.png in Resources */ = {isa = PBXBuildFile; fileRef = 840A5049169D7D89000EDCFA /* FullBody.png */; };
 		840A5053169D8A0C000EDCFA /* PADescribeYourPainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A5051169D8A0C000EDCFA /* PADescribeYourPainViewController.m */; };
 		840A5054169D8A0C000EDCFA /* PADescribeYourPainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840A5052169D8A0C000EDCFA /* PADescribeYourPainViewController.xib */; };
+		841F9BBD16D24D920066A991 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841F9BBC16D24D920066A991 /* CoreLocation.framework */; };
 		846F462916A010660096F100 /* ACEDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F462816A010660096F100 /* ACEDrawingView.m */; };
 		848F2C03169EAA8E00F3051F /* FootLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F2BFD169EAA8E00F3051F /* FootLeft.png */; };
 		848F2C04169EAA8E00F3051F /* FootRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F2BFE169EAA8E00F3051F /* FootRight.png */; };
@@ -41,6 +42,8 @@
 		849B54B716A2E4E900DFCE1F /* human_body.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54B616A2E4E900DFCE1F /* human_body.png */; };
 		849B54B916A2E4F300DFCE1F /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54B816A2E4F300DFCE1F /* Default-Landscape~ipad.png */; };
 		849B54BB16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 849B54BA16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png */; };
+		849D075816D3602B004DC28E /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 849D075716D3602B004DC28E /* pin.png */; };
+		849D075E16D37A0F004DC28E /* pinPurple.png in Resources */ = {isa = PBXBuildFile; fileRef = 849D075D16D37A0E004DC28E /* pinPurple.png */; };
 		84DD191516AEA75C00B48A06 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DD191416AEA75C00B48A06 /* MobileCoreServices.framework */; };
 		84F5518416B2DD4300BC91F0 /* painButtonBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F5518316B2DD4300BC91F0 /* painButtonBack.png */; };
 		84F5518616B2DE5100BC91F0 /* painButtonBack_158.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F5518516B2DE5100BC91F0 /* painButtonBack_158.png */; };
@@ -75,6 +78,7 @@
 		840A5050169D8A0C000EDCFA /* PADescribeYourPainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PADescribeYourPainViewController.h; sourceTree = "<group>"; };
 		840A5051169D8A0C000EDCFA /* PADescribeYourPainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADescribeYourPainViewController.m; sourceTree = "<group>"; };
 		840A5052169D8A0C000EDCFA /* PADescribeYourPainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PADescribeYourPainViewController.xib; sourceTree = "<group>"; };
+		841F9BBC16D24D920066A991 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		846F462716A010660096F100 /* ACEDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEDrawingView.h; sourceTree = "<group>"; };
 		846F462816A010660096F100 /* ACEDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEDrawingView.m; sourceTree = "<group>"; };
 		848F2BFD169EAA8E00F3051F /* FootLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FootLeft.png; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 		849B54B616A2E4E900DFCE1F /* human_body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = human_body.png; path = PainAssessment/human_body.png; sourceTree = "<group>"; };
 		849B54B816A2E4F300DFCE1F /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		849B54BA16A2E4F700DFCE1F /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		849D075716D3602B004DC28E /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		849D075D16D37A0E004DC28E /* pinPurple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinPurple.png; sourceTree = "<group>"; };
 		84DD191416AEA75C00B48A06 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		84F5518316B2DD4300BC91F0 /* painButtonBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = painButtonBack.png; sourceTree = "<group>"; };
 		84F5518516B2DE5100BC91F0 /* painButtonBack_158.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = painButtonBack_158.png; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841F9BBD16D24D920066A991 /* CoreLocation.framework in Frameworks */,
 				8496C9C516B03672001E5E47 /* MapKit.framework in Frameworks */,
 				84DD191516AEA75C00B48A06 /* MobileCoreServices.framework in Frameworks */,
 				8498B14916AD60A3002779D0 /* ImageIO.framework in Frameworks */,
@@ -128,6 +135,8 @@
 		840A4FF8169D6F70000EDCFA = {
 			isa = PBXGroup;
 			children = (
+				849D075D16D37A0E004DC28E /* pinPurple.png */,
+				849D075716D3602B004DC28E /* pin.png */,
 				84F79DCC16B1ABDB00ABEBB7 /* grad_bip.png */,
 				84F79DC916B1A0BA00ABEBB7 /* ds.png */,
 				84F79DC116B19AB800ABEBB7 /* is.png */,
@@ -157,6 +166,7 @@
 		840A5006169D6F70000EDCFA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				841F9BBC16D24D920066A991 /* CoreLocation.framework */,
 				8496C9C416B03672001E5E47 /* MapKit.framework */,
 				84DD191416AEA75C00B48A06 /* MobileCoreServices.framework */,
 				8498B14816AD60A3002779D0 /* ImageIO.framework */,
@@ -350,6 +360,8 @@
 				84F79DCD16B1ABDB00ABEBB7 /* grad_bip.png in Resources */,
 				84F5518416B2DD4300BC91F0 /* painButtonBack.png in Resources */,
 				84F5518616B2DE5100BC91F0 /* painButtonBack_158.png in Resources */,
+				849D075816D3602B004DC28E /* pin.png in Resources */,
+				849D075E16D37A0F004DC28E /* pinPurple.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

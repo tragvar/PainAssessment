@@ -18,21 +18,31 @@
     NSArray *bodyPickerArray1Row;
     NSArray *bodyPickerArray2Row;
     
+    UIImage *firstImageOfFullBody;
+    UIImage *firstImageOfHandRight;
+    UIImage *firstImageOfKneeRight;
+    UIImage *firstImageOfFootRight;
+
+    UIImage *lastImageOfFullBody;
+    UIImage *lastImageOfHandRight;
+    UIImage *lastImageOfKneeRight;
+    UIImage *lastImageOfFootRight;
 }
 
 
 @property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
 @property (nonatomic, unsafe_unretained) IBOutlet UIImageView *drawingView;
 @property (nonatomic, strong) IBOutlet UIView *drView;
-@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property (nonatomic, unsafe_unretained) IBOutlet UIImageView *pinView;
+@property (nonatomic, strong) IBOutlet UIButton *removeAllPinsButton;
+@property (nonatomic, strong) IBOutlet UIButton *removeLastPinButton;
 
-
-
-@property (nonatomic, readwrite) UIImage *screenShotCenter;
-@property (nonatomic, strong) PAReportOnPain *reportOnPian;
-
+@property (nonatomic, strong) UIGestureRecognizer *myGest;
 @property (nonatomic, assign) CGPoint currentPoint;
 @property (nonatomic, strong) MKPointAnnotation *point;
+
+- (IBAction)removeAllPinsButtonPressed:(id)sender;
+- (IBAction)removeLastPinButtonPressed:(id)sender;
 
 
 @end

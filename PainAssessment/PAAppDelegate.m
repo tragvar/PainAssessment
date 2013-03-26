@@ -23,6 +23,7 @@
     self.window.rootViewController = self.viewController;
     
     self.navigationController = [[UINavigationController alloc]initWithRootViewController:self.viewController];
+    
         
     self.window.rootViewController = self.navigationController;
     

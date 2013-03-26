@@ -24,6 +24,8 @@
  */
 
 #import "ACEDrawingView.h"
+#import "PADrawYourPainViewController.h"
+
 #import <QuartzCore/QuartzCore.h>
 
 #if __has_feature(objc_arc)
@@ -40,7 +42,7 @@
 
 
 #define kDefaultLineColor       [UIColor blackColor]
-#define kDefaultLineWidth       10.0f;
+#define kDefaultLineWidth       3;
 #define kDefaultLineAlpha       1.0f
 
 
@@ -130,7 +132,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 //        [path setLineWidth:_lineWidth];
         [path setLineJoinStyle:kCGLineJoinRound];
         [path setLineCapStyle:kCGLineCapSquare];
-        [path setLineColor:[UIColor redColor]];
+        [path setLineColor:[UIColor blackColor]];
 //        [path setLineDash:2 count:5 phase:0.0f];
         [path fillWithBlendMode:kCGBlendModeNormal alpha:0.5];
     }
@@ -282,9 +284,40 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     if ([self.delegate respondsToSelector:@selector(drawingView:didEndDrawFreeformAtPoint:)]) {
         [self.delegate drawingView:self didEndDrawFreeformAtPoint:self.currentPoint];
     }
+        
+        [self setScreenShot];
     }
 }
 
+- (UIImage*) setScreenShot{
+    
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, 0.0);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    int row = [PAReportOnPain sharedInstance].pickerPosition;
+//    NSLog(@"%d", row);
+    switch (row+1) {
+        case 1:
+            [PAReportOnPain sharedInstance].imageOfFullBody = img;
+            break;
+        case 2:
+            [PAReportOnPain sharedInstance].imageOfHandRight = img;
+            break;
+        case 3:
+            [PAReportOnPain sharedInstance].imageOfKneeRight = img;
+            break;
+        case 4:
+            [PAReportOnPain sharedInstance].imageOfFootRight = img;
+            break;
+            
+        default:
+            [PAReportOnPain sharedInstance].imageOfFullBody = img;
+            break;
+    }
+    UIGraphicsEndImageContext();
+    return img;
+}
 
 #pragma mark - Actions
 

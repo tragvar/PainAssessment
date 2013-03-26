@@ -28,12 +28,9 @@
 
 @synthesize drView;
 @synthesize pickerView;
-@synthesize imageView;
 @synthesize screenShotDraw;
-//@synthesize reportOnPain;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -50,23 +47,22 @@
     bodyPickerArray1Row = [[NSArray alloc] initWithObjects:@"Full Body", @"Hend", @"Knee", @"Foot", nil];
     bodyPickerArray2Row = [[NSArray alloc] initWithObjects:@"Left", @"Right", nil];
     
-    self.imageView.image = [UIImage imageNamed:@"FullBody.png"];
     // set the delegate
     self.drawingView.delegate = self;
         
     // start with red
-    self.drawingView.lineWidth = 1.5;
-    self.drawingView.lineColor = [UIColor redColor];
-    self.lineWidthSlider.value = self.drawingView.lineWidth;
+    self.drawingView.lineWidth = 3;
+//    self.drawingView.lineColor = [UIColor redColor];
+    self.lineWidthSlider.value = 1.5;
     self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
     self.drView.layer.borderWidth = 1;
     self.drView.layer.cornerRadius = 20;
+    
+    [PAReportOnPain sharedInstance].pickerPosition = [self.pickerView selectedRowInComponent:0];
 }
 
-- (void)showNextView
-{
-    [self setScreenShot];
-    [PAReportOnPain sharedInstance].imageOfPain = self.screenShotDraw;
+- (void)showNextView{
+    [PAReportOnPain sharedInstance].pickerPosition = 0;
     PADescribeYourPainViewController *numberListView = [[PADescribeYourPainViewController alloc] initWithNibName:@"PADescribeYourPainViewController" bundle:nil];
     [self.navigationController pushViewController:numberListView animated:YES];
     NSLog(@"show list here");
@@ -79,25 +75,29 @@
     UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
     
     self.screenShotDraw = img;
-
+    int row = [self.pickerView selectedRowInComponent:0];
+    NSLog(@"%d", row);
+    switch (row+1) {
+        case 1:
+            [PAReportOnPain sharedInstance].imageOfFullBody = self.screenShotDraw;
+            break;
+        case 2:
+            [PAReportOnPain sharedInstance].imageOfHandRight = self.screenShotDraw;
+            break;
+        case 3:
+            [PAReportOnPain sharedInstance].imageOfKneeRight = self.screenShotDraw;
+            break;
+        case 4:
+            [PAReportOnPain sharedInstance].imageOfFootRight = self.screenShotDraw;
+            break;
+            
+        default:
+            [PAReportOnPain sharedInstance].imageOfFullBody = self.screenShotDraw;
+            break;
+    }
 //    UIGraphicsEndImageContext();
-    
-    
     return img;
-
-//    CGRect rect = [self.drView bounds];    
-//    UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    [self.drView.layer renderInContext:context];
-//    UIImage *scr = UIGraphicsGetImageFromCurrentImageContext();
-//    
-////    [reportOnPain setImageOfPain:scr];
-//    
-//    UIGraphicsEndImageContext();
-//   
-//    return scr;
 }
-
 
 #pragma mark - Picker view data source
 
@@ -126,28 +126,34 @@
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    [PAReportOnPain sharedInstance].pickerPosition = row;
     if (component == 0) {
     switch (row+1) {
         case 1:
-            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
+            [self.drawingView clear];                       
+            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[PAReportOnPain sharedInstance].imageOfFullBody];
             break;
         case 2:
-            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"HandRight.png"]];
+            [self.drawingView clear];
+            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[PAReportOnPain sharedInstance].imageOfHandRight];
             break;
         case 3:
-            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"KneeRight.png"]];
+            [self.drawingView clear];
+            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[PAReportOnPain sharedInstance].imageOfKneeRight];
             break;
         case 4:
-            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FootRight.png"]];
+            [self.drawingView clear];
+            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[PAReportOnPain sharedInstance].imageOfFootRight];
             break;
             
         default:
-            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"FullBody.png"]];
+            self.drawingView.backgroundColor = [UIColor colorWithPatternImage:[PAReportOnPain sharedInstance].imageOfFullBody];
             break;
         }
     }
 }
 
+#pragma mark - actions buttons
 
 - (void)updateButtonStatus{
     self.undoButton.enabled = [self.drawingView canUndo];
@@ -156,16 +162,19 @@
 
 - (IBAction)undo:(id)sender{
     [self.drawingView undoLatestStep];
+    [self setScreenShot];
     [self updateButtonStatus];
 }
 
 - (IBAction)redo:(id)sender{
     [self.drawingView redoLatestStep];
+    [self setScreenShot];
     [self updateButtonStatus];
 }
 
 - (IBAction)clear:(id)sender{
     [self.drawingView clear];
+    [self setScreenShot];
     [self updateButtonStatus];
 }
 
@@ -176,105 +185,11 @@
 
 #pragma mark - ACEDrawing View Delegate
 
-- (void)drawingView:(ACEDrawingView *)view didEndDrawFreeformAtPoint:(CGPoint)point
-{
+- (void)drawingView:(ACEDrawingView *)view didEndDrawFreeformAtPoint:(CGPoint)point{
     [self updateButtonStatus];
 }
 
-
-//- (UIColor*) getPixelColorAtLocation:(CGPoint)point {
-//    pixelColor = [UIColor colorWithRed:1 green: 1 blue:1 alpha:1];
-////    CGImageRef inImage = (CGImageRef)CFBridgingRetain((_drawingView.backgroundColor));
-//    CGImageRef inImage = [UIImage imageNamed:@"FullBody.png"].CGImage;
-//
-//    
-////    [self CGImageWriteToFile:inImage, @"TESTPicture.png"];
-//
-//    // Create off screen bitmap context to draw the image into. Format ARGB is 4 bytes for each pixel: Alpa, Red, Green, Blue
-//    CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
-//    if (cgctx == NULL) { return nil; /* error */ }
-//    
-//   
-//    size_t w = CGImageGetWidth(inImage);
-//    size_t h = CGImageGetHeight(inImage);
-//    CGRect rect = {{0,0},{w,h}};
-//    
-//    // Draw the image to the bitmap context. Once we draw, the memory
-//    // allocated for the context for rendering will then contain the
-//    // raw image data in the specified color space.
-//    CGContextDrawImage(cgctx, rect, inImage);
-//    
-//    // Now we can get a pointer to the image data associated with the bitmap
-//    // context.
-//    unsigned char* data = CGBitmapContextGetData (cgctx);
-//    if (data != NULL) {
-//        //offset locates the pixel in the data from x,y.
-//        //4 for 4 bytes of data per pixel, w is width of one row of data.
-//        int offset = 4*((w*round(point.y))+round(point.x));
-//        int alpha =  data[offset];
-//        int red = data[offset+1];
-//        int green = data[offset+2];
-//        int blue = data[offset+3];
-////        NSLog(@"offset: %i colors: RGB A %i %i %i  %i",offset,red,green,blue,alpha);
-//        pixelColor = [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:(alpha/255.0f)];
-//    }
-//    
-//    // When finished, release the context
-//    CGContextRelease(cgctx);
-//    // Free image data memory for the context
-//    if (data) { free(data); }
-//    
-//    return pixelColor;
-//}
-//
-//- (CGContextRef) createARGBBitmapContextFromImage:(CGImageRef) inImage
-//{
-//    CGContextRef    context = (CGContextRef)inImage;
-//    CGColorSpaceRef colorSpace;
-//    void *          bitmapData;
-//    int             bitmapByteCount;
-//    int             bitmapBytesPerRow;
-//    
-//    size_t width = CGImageGetWidth(inImage);
-//    size_t height = CGImageGetHeight(inImage);
-//    
-//    bitmapBytesPerRow   = (width * 4);
-//    bitmapByteCount     = (bitmapBytesPerRow * height);
-//    
-//    // Use the generic RGB color space.
-//    colorSpace = CGColorSpaceCreateDeviceRGB();
-//    
-//    if (colorSpace == NULL)
-//    {
-//        //fprintf(stderr, "Error allocating color space\n");
-//        return NULL;
-//    }
-//    
-//    bitmapData = malloc( bitmapByteCount );
-//    if (bitmapData == NULL)
-//    {
-//        //fprintf (stderr, "Memory not allocated!");
-//        CGColorSpaceRelease( colorSpace );
-//        return NULL;
-//    }
-//    context = CGBitmapContextCreate (bitmapData,
-//                                     width,
-//                                     height,
-//                                     8,      // bits per component
-//                                     bitmapBytesPerRow,
-//                                     colorSpace,
-//                                     kCGImageAlphaPremultipliedFirst);
-//    if (context == NULL)
-//    {
-//        free (bitmapData);
-//    }
-//    CGColorSpaceRelease( colorSpace );
-//    
-//    return context;
-//}
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

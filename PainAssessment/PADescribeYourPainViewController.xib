@@ -115,7 +115,7 @@ YXQgYmVzdCBkZXNjcmliZXMgdGhlIGFyZWEgb2YgcGFpbiB5b3UgaGF2ZSBqdXN0IHNoYWRlZC4</str
 										<string key="NSFrame">{{0, 46}, {324, 220}}</string>
 										<reference key="NSSuperview" ref="39851539"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="220016649"/>
+										<reference key="NSNextKeyView" ref="654919125"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<object class="NSColor" key="IBUIBackgroundColor">
 											<int key="NSColorSpace">3</int>
@@ -194,7 +194,6 @@ IHRvIHNlbGVjdCB0aGUgSW50ZW5zaXR5IG9mIHRoZSBwYWluIHlvdSBoYXZlIGp1c3Qgc2hhZGVkLg</
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<float key="IBUIValue">0.5</float>
 							</object>
 							<object class="IBUITextView" id="726413919">
 								<reference key="NSNextResponder" ref="654919125"/>
@@ -228,7 +227,7 @@ IHRvIHNlbGVjdCB0aGUgSW50ZW5zaXR5IG9mIHRoZSBwYWluIHlvdSBoYXZlIGp1c3Qgc2hhZGVkLg</
 								<string key="NSFrame">{{376, 118}, {236, 37}}</string>
 								<reference key="NSSuperview" ref="654919125"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="458106892"/>
+								<reference key="NSNextKeyView" ref="915115943"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -252,6 +251,7 @@ IHRvIHNlbGVjdCB0aGUgSW50ZW5zaXR5IG9mIHRoZSBwYWluIHlvdSBoYXZlIGp1c3Qgc2hhZGVkLg</
 						<string key="NSFrame">{{392, 128}, {612, 216}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="220016649"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -296,7 +296,6 @@ dCB0aGUgRGVwdGggb2YgdGhlIHBhaW4geW91IGhhdmUganVzdCBzaGFkZWQuA</string>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<float key="IBUIValue">0.5</float>
 							</object>
 							<object class="IBUITextView" id="732242690">
 								<reference key="NSNextResponder" ref="915115943"/>
@@ -345,6 +344,7 @@ dCB0aGUgRGVwdGggb2YgdGhlIHBhaW4geW91IGhhdmUganVzdCBzaGFkZWQuA</string>
 						<string key="NSFrame">{{392, 375}, {612, 237}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="458106892"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>

@@ -14,7 +14,14 @@
 
 @implementation PAReportOnPain
 
-@synthesize imageOfPain;
+@synthesize imageOfFullBody;
+@synthesize imageOfHandRight;
+@synthesize imageOfHandLeft;
+@synthesize imageOfKneeRight;
+@synthesize imageOfKneeLeft;
+@synthesize imageOfFootRight;
+@synthesize imageOfFootLeft;
+
 @synthesize typeOfPain;
 @synthesize intensityOfPain;
 @synthesize depthOfPain;
@@ -36,16 +43,6 @@
     return sReport;
 }
 
-//+ (id) allocWithZone:(NSZone *)zone
-//{
-//    return [self sharedInstance] ;
-//}
-//
-//- (id) copyWithZone:(NSZone*)zone
-//{
-//    return self;
-//}
-
 
 - (id)init
 {
@@ -59,22 +56,54 @@
 
 - (void)configure
 {
-    self.imageOfPain = nil;
+    self.imageOfFullBody = [UIImage imageNamed:@"FullBody.png"];
+    self.imageOfHandRight = [UIImage imageNamed:@"HandRight.png"];
+    self.imageOfHandLeft = [UIImage imageNamed:@"HandLeft.png"];
+    self.imageOfKneeRight = [UIImage imageNamed:@"KneeRight.png"];
+    self.imageOfKneeLeft = [UIImage imageNamed:@"KneeLeft.png"];
+    self.imageOfFootRight = [UIImage imageNamed:@"FootRight.png"];
+    self.imageOfFootLeft = [UIImage imageNamed:@"FootLeft.png"];
+    
     self.typeOfPain = nil;
-    self.intensityOfPain = 0;
+    self.intensityOfPain = nil;
     self.depthOfPain = 0;
     self.describeOfPain = nil;
 }
 
-- (void)setImageOfPain:(UIImage *)image{
-    imageOfPain = image;
+- (void)setImageOfFullBody:(UIImage *)image{
+    imageOfFullBody = image;
 }
+
+- (void)setImageOfHandRight:(UIImage *)image{
+    imageOfHandRight = image;
+}
+
+- (void)setImageOfHandLeft:(UIImage *)image{
+    imageOfHandLeft = image;
+}
+
+- (void)setImageOfKneeRight:(UIImage *)image{
+    imageOfKneeRight = image;
+}
+
+- (void)setImageOfKneeLeft:(UIImage *)image{
+    imageOfKneeLeft = image;
+}
+
+- (void)setImageOfFootRight:(UIImage *)image{
+    imageOfFootRight = image;
+}
+
+- (void)setImageOfFootLeft:(UIImage *)image{
+    imageOfFootLeft = image;
+}
+
 
 - (void)setTypeOfPain:(NSString *)type{
     typeOfPain = type;
 }
 
-- (void)setIntensityOfPain:(NSInteger *)intensity{
+- (void)setIntensityOfPain:(UIColor *)intensity{
     intensityOfPain = intensity;
 }
 

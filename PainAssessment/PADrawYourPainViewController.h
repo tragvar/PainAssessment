@@ -14,9 +14,9 @@
 @class ACEDrawingView;
 @class PAReportOnPain;
 
+
 @interface PADrawYourPainViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource >{
     
-    UIImageView *_imageView;
     UIColor *pixelColor;
     UIColor *whiteC;
     UIImage *screenShotDraw;
@@ -33,8 +33,8 @@
 @property (nonatomic, strong) UIImage *screenShotDraw;
 //@property (nonatomic, strong) PAReportOnPain *reportOnPain;
 
-@property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) IBOutlet UIView *drView;
+@property (nonatomic, strong) IBOutlet UIView *leftView;
 @property (nonatomic, unsafe_unretained) IBOutlet ACEDrawingView *drawingView;
 @property (nonatomic, strong) IBOutlet UISlider *lineWidthSlider;
 @property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
@@ -50,6 +50,6 @@
 
 - (UIImage*) setScreenShot;
 + (UIImage*) getScreenShot: (PACenterofYourPainViewController*)obj;
-
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 
 @end
